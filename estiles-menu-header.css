@@ -1,0 +1,706 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* fuente global*/
+@font-face {
+    font-family: 'Titulobienvenida';
+    src: url('../estilos/fuentes/bienvenida.otf') format('truetype'),
+         url('fuentes/Evil\ Empire.otf') format('otf');
+}
+
+.aparece {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.aparece.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #121212;
+  background-image: url(./Dominios/fancy-cushion.png);
+  overflow-x: hidden;
+}
+
+.menu a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contenido {
+  text-align: center;
+}
+
+.imagen-box img {
+  max-width: 1078px;
+  width: 605%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #007bff;
+}
+
+img.logotipo {
+    width: 83px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    z-index: 1000;
+    background: linear-gradient(to bottom, #5f00ff, #007bff);
+    background-repeat: no-repeat;
+    transition: all 0.6s ease;
+    height: 70px !important;
+    flex-direction: row;
+    border-bottom-left-radius: 211% 63%;
+    border-bottom-right-radius: 211% 63%;
+    text-align: center;
+}
+
+/* Logo y título en el header */
+.logo {
+ width: 50px;
+ height: 50px;
+ background-color: rgb(0, 123, 255);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: bold;
+ margin-right: 15px;
+ border-radius: 50%;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 1.9em;
+  margin-right: 900px;
+  text-shadow: 0 0 14px #9400ff;
+  margin-left: -1884px;
+  color: white;
+}
+
+/* Menú */
+.menu {
+    display: flex;
+    gap: 0px;
+    text-shadow: 0 0 10px black;
+    position: absolute;
+    margin-left: 695px;
+    margin-top: 0px;
+}
+
+.navbar.contraido .menu {
+  margin-top: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.el_vacio {
+  padding: 274px;
+}
+
+.menu a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contenido {
+  text-align: center;
+}
+
+/* --- Responsive: Tablet/Móvil --- */
+@media (max-width: 768px) {
+  /*
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .titulo {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+  */
+  .menu {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* propaganda de descargas*/
+.enunciado {
+    font-family: cursive;
+    margin-bottom: 7px;
+}
+
+.descarga-modal:hover {
+  transform: scale(1.02);
+}
+
+/* ----- Botón de Descarga ----- */
+.btn-version {
+  border: solid 1px;
+  border-radius: 20px;
+  padding: 12px 25px;
+  width: 100%;
+  max-width: 431px;
+  color: #dfffff;
+  background: #01b100;
+  font-size: clamp(16px, 2vw, 20px); /* Tamaño responsive */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.btn-version:hover {
+  transform: scale(1.1);
+}
+
+/* ----- Ícono ----- */
+.icoDown {
+  width: clamp(50px, 6vw, 81px); /* Tamaño responsive */
+  height: auto;
+}
+
+/* ----- Media Queries para Móviles ----- */
+@media (max-width: 768px) {
+  .descarga-modal {
+    width: 95%;
+  }
+  
+  .btn-version {
+    padding: 10px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .icoDown {
+    margin-bottom: 8px;
+  }
+}
+
+/* boton de descarga*/
+button#btn-ultima-version {
+    border: solid 1px;
+    border-radius: 20px;
+    padding: 12px 9px;
+    width: 431px;
+    color: #dfffff;
+    background: #01b100;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    font-family: 'sans-serif';
+    transition: calc(1.1);
+    
+    transition: transform 0.4s ease;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+
+/* luz para el header*/
+.cursor-light {
+  position: absolute;
+  width: 203px;
+  height: 203px;
+  background: radial-gradient(circle, rgb(133 0 255 / 97%) 0%, rgb(0 123 255 / 5%) 70%);
+  border-radius: 50%;
+  pointer-events: none; /* Permite clicks a través de la luz */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  will-change: transform;
+  left: 0;
+  top: 0;
+}
+
+.navbar:hover .cursor-light {
+  opacity: 1;
+}
+
+/* Asegura que los botones y texto estén por encima 
+.logo, .titulo, .menu, .menu a {
+  position: relative;
+  z-index: 1;
+}*/
+
+/* Modal completo (fondo semitransparente) */
+.hint-modal {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Contenido del modal */
+.hint-content {
+      background: rgb(0 0 0 / 0%);
+    backdrop-filter: blur(2px);
+    color: white;
+    padding: 5px 9px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border: 1px solid #0ff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Animación de flecha */
+.scroll-hint-animation {
+  width: 24px;
+  height: 40px;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-hint-animation::after {
+  content: "↓";
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #0ff;
+  font-size: 16px;
+  animation: bounce 1.5s infinite;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+  0%, 100% { top: 5px; }
+  50% { top: 12px; }
+}
+
+/* Clase para ocultar el modal */
+.hint-modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* css para boton de sempou*/
+.to-top-btn {
+    position: fixed;
+    bottom: 39px;
+    right: max(20px, env(safe-area-inset-right)); /* adactable a cualquier trasto*/
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007bff, #9400ff);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.to-top-btn:not(.hidden) {
+  opacity: 0.8;
+}
+
+.to-top-btn:hover {
+  opacity: 1;
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* --- Estilos del botón hamburguesa (solo móvil) --- */
+.hamburger-btn {
+  display: none; /* Oculta en desktop */
+  background: transparent;
+  border: solid 2px white;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 290px; /* Lo empuja a la derecha */
+  z-index: 1001;
+}
+
+/* --- Menú lateral móvil --- */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.hamburger-btn.active::before {
+  content: "✖";
+}
+
+.mobile-menu {
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 5px 20px;
+  gap: 15px;
+  font-size: 25px;
+}
+
+.menu-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Media Query para móvil --- */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block; /* Muestra el botón en móvil */
+  }
+
+  .desktop-menu {
+    display: none !important; /* Oculta el menú desktop */
+  }
+  /*
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 15px !important;
+    height: 70px !important;
+  }*/
+}
+
+/*CSS menu hamburgesa*/
+.mobile-menu {
+  display: flex !important;
+  flex-direction: column;
+  left: -310px;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(to bottom, #c000ff, #007bff);
+  z-index: 1001;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0
+}
+
+.mobile-menu.active {
+  left: 0 !important;
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+/* Ocultar menú desktop en móvil */
+@media (max-width: 768px) {
+  .menu {
+    display: none !important;
+  }
+  
+  .mobile-menu {
+    display: flex !important;
+  }
+}
+
+/* Estilos existentes del cartel (desktop) */
+.principal {
+  font-size: clamp(2.5rem, 8vw, 4rem); /* Tamaño responsivo entre 2.5rem y 4.5rem */
+  font-family: 'titulobienvenida';
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+.linea-mobile {
+  display: none; /* Oculta la versión móvil por defecto */
+}
+
+/* --- Versión móvil --- */
+@media (max-width: 768px) {
+  .linea-desktop {
+    display: none; /* Oculta el texto en una línea */
+  }
+  
+  .linea-mobile {
+    display: flex; /* Muestra la versión apilada */
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+  }
+  
+  .linea-mobile span {
+    display: block;
+    line-height: 1.3; /* Espacio entre líneas */
+    font-size: clamp(2rem, 9vw, 3rem); /* Tamaño más grande en móvil */
+  }
+  
+  /* Ajusta la animación para móvil */
+  #cartelon {
+    white-space: normal;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+/* Modal Donaciones */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.modal-contenido {
+  background: linear-gradient(135deg, #5f00ff, #007bff);
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.7);
+  position: relative;
+  color: white;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.qr-modal {
+  width: 180px;
+  height: 180px;
+  margin: 15px auto;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  background: white;
+}
+
+.subtitulo-modal {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  opacity: 0.9;
+}
+
+.compartir-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.botones-compartir {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.btn-compartir img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.btn-compartir:hover img {
+  transform: scale(1.1);
+}
+
+.frase-compartir {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-contenido {
+    padding: 20px 15px;
+    width: 95%;
+  }
+  
+  .qr-modal {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cursor-light {
+    display: none !important; /* ¡Adiós, cursor-light en móvil! */
+  }
+
+  .botones-compartir {
+    gap: 10px;
+  }
+}
+
+.btn-compartir:hover {
+  animation: bounce 0.5s;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Menú contextual */
+.menu-item-contextual {
+  position: relative;
+  display: inline-block;
+}
+
+/* Menú contextual  */
+.menu-contextual {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(135deg, #5f00ff, #007bff);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+  min-width: 150px;
+  animation: fadeIn 0.3s ease;
+}
+
+.btn-contextual {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.btn-contextual:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* ¡Selector hover  */
+.menu-item-contextual:hover .menu-contextual {
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.menu-item-contextual::after {
+  content: " ▼";
+  font-size: 0.8em;
+}
+
+
+/* estilos de css para movil del header*/
+@media (max-width: 768px) {
+  /* --- Header ajustado --- */
+  .navbar {
+    padding: 10px 15px !important; /* Espaciado reducido */
+    justify-content: space-between; /* Logo y botón a los extremos */
+  }
+
+  /* Logo y título alineados a la izquierda */
+  .logo, .titulo {
+    margin: 0 !important; /* Reset de márgenes locos */
+  }
+
+  .titulo {
+    font-size: 1.2rem !important; /* Título más pequeño */
+    white-space: nowrap; /* Evita saltos de línea */
+    margin-left: 10px !important; /* Espacio entre logo y título */
+  }
+
+  /* --- Botón hamburguesa visible --- */
+  .hamburger-btn {
+    display: block !important; /* Fuerza a mostrar el botón */
+    margin-left: 0 !important; /* Elimina el margen izquierdo excesivo */
+    padding: 5px 12px; /* Tamaño táctil */
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil */
+  }
+
+  /* Overlay del menú móvil */
+  .mobile-menu-overlay.active {
+    display: block; /* Muestra el fondo oscuro al abrir menú */
+  }
+}

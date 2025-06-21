@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SPEED Multimedia - Reproductor multimedia rápido y ligero para todas tus necesidades de audio y video">
+  <meta name="keywords" content="reproductor multimedia, SPEED, descargar reproductor, audio, video">
+  <meta name="author" content="Abraham de Jesus Piniri Megret">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../recursos/iconob2.png" type="image/x-icon">
+  <title>Descargas | SPEED Multimedia</title>
+  <link rel="stylesheet" href="../estiles-menu-header.css">
+  <link rel="stylesheet" href="./estiles-descargas.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="../recursos/iconob.png" class="logotipo">
+    </div>
+
+    <div class="titulo">SPEED ELECTRONIC</div>
+    <nav class="menu">
+      <a href="../index.html">Casa</a>
+      <a href="./index-Guiauser.html">Guía ↓</a>
+      <a href="./index.html">Descargas ↓</a>
+      <!-- Modal de abrir donacion -->
+      <div class="menu-item-contextual"> 
+        <a href="./index-quejas.html">Quejas y Sugerencias</a> 
+        <div class="menu-contextual">
+          <button class="btn-contextual" onclick="ModalDonaciones.open()">💖 Donar</button>
+        </div>
+      </div>
+      <a href="./index-acercaWEB.html">Acerca de Nosotros!</a>
+    </nav>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+     <div class="cursor-light"></div> <!-- luz que sigue el mause-->
+  </header>
+
+  <!-- Menú lateral móvil (oculto por defecto) -->
+  <div class="mobile-menu-overlay"></div>
+  <nav class="mobile-menu">
+    <button class="close-btn" aria-label="Cerrar menú">✖</button>
+    <div class="menu-links">
+      <a href="../index.html">🏠 Casa</a>
+      <a href="./index-Guiauser.html">📖 Guía ↓</a>
+      <a href="./index.html">⬇️ Descargas ↓</a>
+      <a href="./index-quejas.html">✉️ Quejas y Sugerencias</a>
+      <a href="./index-acercaWEB.html">👥 Acerca de Nosotros!</a>
+      <a onclick="ModalDonaciones.open()">💰 Donaciones</a>    
+    </div>
+  </nav>
+
+  <button class="to-top-btn hidden" aria-label="Subir al inicio">↑</button>
+
+  <main class="contenedor-descargas">
+    <h1>Descargas para Windows</h1>
+  </main>
+
+  <div id="loader-tarjetas">
+    <div class="spinner"></div>
+    <p class="mensaje-loader">⏳ Espera... las tarjetas son tímidas dale su tiempo!</p>
+    <p class="mensaje-loader">En caso de no salir en 1 min Recarga la pagina</p>
+  </div>
+
+    
+    <!-- Tarjeta de versión (ejemplo v2.0) -->
+    
+  <!--<button onclick="ModalDonaciones.open()">Abrir Donaciones</button>-->
+  
+  <!-- Confeti mágico -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="./logica-subWeb.js"></script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+/* Estilos base del reproductor */
+.bottom-player {
+    position: relative;
+    bottom: 20px;
+    left: 9%;
+    height: 76px;
+    width: 81%;
+    background-color: rgb(22 22 22 / 71%);
+    border: 1px solid #ffffff30;
+    border-radius: 44px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 50%);
+    padding: 0 15px;
+    z-index: 800;
+    transition: all 0.9s ease;
+    backdrop-filter: blur(10px);
+}
+
+.bottom-player:hover {
+  transform: scale(1.2);
+}
+
+.bottom-player.fixed {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 99%;
+    max-width: 1078px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.control-btn2 {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.control-btn2 img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+}
+
+.control-btn2:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+
+.control-btn img {
+    width: 250%;
+    height: 250%;
+    object-fit: contain;
+}
+
+.play-pause {
+    width: 38px;
+    height: 37px;
+    object-fit: contain;
+}
+
+.play-pause:hover {
+    transform: scale(1.15);
+}
+
+.volume-slider-container {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+#volume {
+    width: 80px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+#volume:hover {
+    height: 6px;
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color, #1ed760);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progress-info {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0 15px;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary-color, #1db954);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.track-info {
+    min-width: 150px;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.track-info h3 {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-info p {
+    font-size: 12px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.progress-water {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        90deg,
+        rgba(37, 99, 235, 0.1) 0%,
+        rgba(37, 99, 235, 0.8) 25%,
+        rgba(37, 99, 235, 0.15) 50%,
+        rgba(37, 99, 235, 0.8) 75%,
+        rgba(37, 99, 235, 0.45) 100%
+    );
+    background-size: 200% 100%;
+    animation: waterFlow 3s linear infinite;
+    transition: width 0.1s linear;
+    z-index: -1;
+    border-radius: 44px;
+}
+
+@keyframes waterFlow {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Modal de lista de reproducción */
+.playlist-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 551px;
+    max-height: 70vh;
+    background-color: rgb(30 30 30 / 66%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgb(0 0 0);
+    z-index: 1000;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    border: 1px solid #ffffff30;
+}
+
+.playlist-modal.show {
+    display: block;
+}
+
+.modal-header {
+    padding: 15px;
+    background-color: rgb(40 40 40);
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: white;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content {
+    padding: 15px;
+    overflow-y: auto;
+    max-height: calc(70vh - 60px);
+}
+
+.playlist-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.playlist-btn {
+    padding: 8px 15px;
+    background-color: rgb(60 60 60);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.playlist-btn:hover {
+    background-color: rgb(80 80 80);
+}
+
+.playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    padding: 10px;
+    border-bottom: 1px solid #ffffff10;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playlist li:hover {
+    background-color: rgb(50 50 50);
+}
+
+.playlist li.playing {
+    background-color: var(--primary-color, #1db954);
+    color: white;
+}
+
+.playlist li .delete-track {
+    color: #ff6b6b;
+    background: none;
+    border: none;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+/* 🔥 Estilos específicos para móvil (responsive) */
+@media (max-width: 768px) {
+  .playlist-modal {
+    width: 95% !important;
+    max-width: 95% !important;
+    height: 80vh !important;
+    top: 10vh !important;
+    left: 2.5% !important;
+    transform: none !important;
+    border-radius: 12px !important;
+  }
+
+  .control-btn {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    padding: 6px !important;
+  }
+
+  /* 🎵 Barra de progreso */
+  .progress-info {
+    display: none;
+  }
+
+  .progress-bar {
+    height: 0 !important;
+  }
+
+  /* 🔉 Control de volumen */
+  .volume-slider-container {
+    display: none !important;
+  }
+
+  /* 🎚️ Botón de volumen alternativo (móvil) */
+  #mute {
+    display: flex !important;
+    margin-right: 10px !important;
+  }
+
+  /* ⏯️ Botón Play/Pause más grande */
+  .play-pause {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  /* 📲 Ajuste general del reproductor */
+  .bottom-player {
+    padding: 10px !important;
+    height: auto !important;
+    flex-wrap: wrap !important;
+  }
+
+  .player-controls {
+    gap: 19px !important;
+    justify-content: center !important;
+  }
+
+  /* 🏷️ Info de la canción */
+  .track-info {
+    display: none;
+  }
+
+  /* 🕒 Tiempos de duración */
+  .time-info {
+    font-size: 5px !important;
+  }
+
+  .bottom-player {
+    left: 2%;
+    height: 76px;
+    width: 97%;
+  }
+
+  .modal-header {
+    padding: 12px !important;
+  }
+
+  .playlist {
+    max-height: 60vh !important;
+  }
+
+  .playlist li {
+    padding: 12px 8px !important;
+    font-size: 14px !important;
+  }
+
+  .playlist-actions {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .playlist-btn {
+    width: 100% !important;
+    padding: 10px !important;
+  }
+}
+
+/* 📱 Ajustes extra para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .playlist-modal {
+    height: 85vh !important;
+    top: 5vh !important;
+  }
+
+  .modal-header h3 {
+    font-size: 16px !important;
+  }
+
+  .close-modal {
+    font-size: 20px !important;
+  }
+}
+
+/* 📱 Ajustes EXTRA para pantallas pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  .control-btn {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .control-btn2 img {
+    width: 128%;
+    height: 128%;
+    object-fit: contain;
+  }
+  .play-pause {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .track-info h3 {
+    font-size: 5px !important;
+  }
+
+  .track-info p {
+    font-size: 5px !important;
+  }
+}

@@ -1,0 +1,171 @@
+@media (max-width: 768px) {
+ /*  .logo, .titulo {
+      margin: 0 !important;
+  } */
+
+  .contador-visitas {
+    position: absolute;
+    font-size: 1.0em;
+    margin-top: -582px;
+    color: #ffffff;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.22);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  img.logotipo {
+    width: 86px;
+    margin-top: 22px;
+    margin-left: 4px;
+  }
+  /* --- Header fijo y compacto --- */
+  .navbar {
+    flex-direction: row !important; /* Logo, título y botón en línea */
+    padding: 10px 15px !important;
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center;
+    border-bottom-left-radius: 211% 63% !important;
+    border-bottom-right-radius: 211% 63% !important;
+    width: 100% !important;
+    height: 407px;
+  }
+
+  /*  Anti scroll horizontal */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .navbar.contraido {
+    height: 70px;
+    width: 100% !important;
+    padding: 10px 30px;
+    flex-direction: row;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .descarga-modal {
+    width: 100%;
+  }
+  
+  .cursor-light {
+    display: none !important; /* ¡Adiós, cursor-light en móvil! */
+  }
+
+  .btn-version {
+    padding: 10px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .icoDown {
+    margin-bottom: 8px;
+  }
+
+  .hamburger-btn {
+    display: block !important;
+    margin-left: 0 !important;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .desktop-menu {
+    display: none !important; /* Oculta el menú desktop */
+  }
+
+    .menu {
+    display: none !important;
+  }
+  
+  .mobile-menu {
+    display: flex !important;
+  }
+
+    .linea-desktop {
+    display: none; /* Oculta el texto en una línea */
+  }
+  
+  .linea-mobile {
+    display: flex; /* Muestra la versión apilada */
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+  }
+  
+  .linea-mobile span {
+    display: block;
+    line-height: 1.9;
+    font-size: 36px;
+  }
+
+    .menu {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Ajusta la animación para móvil */
+  #cartelon {
+    white-space: normal;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+    .qr-modal {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .botones-compartir {
+    gap: 10px;
+  }
+
+
+   .titulo {
+   font-size: 1.2rem !important;
+   white-space: nowrap;
+  } 
+
+  
+  .modal-contenido {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .botones-compartir {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .botones-compartir img {
+    width: 40px;
+  }
+
+  .btn-telegram img {
+    width: 150px;
+  }
+
+  .particle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(247, 0, 255, 0.144);
+    box-shadow: 
+      0 0 10px rgba(38, 0, 255, 0.185),
+      0 0 20px rgba(255, 0, 255, 0.199);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+
+  .to-top-btn {
+    bottom: 83px;
+  }
+}

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SPEED Multimedia - Reproductor multimedia rápido y ligero para todas tus necesidades de audio y video">
+  <meta name="keywords" content="reproductor multimedia, SPEED, descargar reproductor, audio, video">
+  <meta name="author" content="Abraham de Jesus Piniri Megret">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./recursos/iconob2.png" type="image/x-icon">
+  <title>SPEED Electronic 2.0</title>
+  <link rel="stylesheet" href="./estilos/estiles.css">
+  <link rel="stylesheet" href="./estilos/Estiles-movil.css">
+  <link rel="stylesheet" href="./estilos/estiles-player.css">
+  <link rel="stylesheet" href="./estilos/Estiles-anuncios.css">
+  <link rel="stylesheet" href="./Dominios/estiles-descargas.css">
+  <link rel="stylesheet" href="./estilos/Estiles-animation.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="./recursos/iconob.png" class="logotipo">
+    </div>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+
+    <!-- Cartel de anuncio principal -->
+    <section class="hero">
+      <h1 id="cartelon" class="principal">
+        <span class="linea-desktop">BIENVENID@! A SPEED MULTIMEDIA!</span>
+        <span class="linea-mobile">
+          <span>BIENVENID@!</span>
+          <span>A</span>
+          <span>SPEED MULTIMEDIA!</span>
+        </span>
+      </h1>
+    </section>
+
+    <!-- Menú (desktop) -->
+    <div class="titulo">SPEED ELECTRONIC</div>
+    <nav class="menu">
+      <a href="../index.html">Casa</a>
+      <a href="./Dominios/index-Guiauser.html">Guía ↓</a>
+      <a href="./Dominios/index.html">Descargas ↓</a>
+      <!-- Modal de abrir donacion -->
+      <div class="menu-item-contextual"> 
+        <a href="./Dominios/index-quejas.html">Quejas y Sugerencias</a> 
+        <div class="menu-contextual">
+          <button class="btn-contextual" onclick="abrirModalDonaciones()">💖 Donar</button>
+        </div>
+      </div>
+      <a href="./Dominios/index-acercaWEB.html">Acerca de Nosotros!</a>
+    </nav>
+     <div class="cursor-light"></div> <!-- luz que sigue el mause-->
+  </header>
+
+  <!-- Menú lateral móvil (oculto por defecto) -->
+  <div class="mobile-menu-overlay"></div>
+  <nav class="mobile-menu">
+    <button class="close-btn" aria-label="Cerrar menú">✖</button>
+    <div class="menu-links">
+      <a href="../index.html">🏠 Casa</a>
+      <a href="./Dominios/index-Guiauser.html">📖 Guía ↓</a>
+      <a href="./Dominios/index.html">⬇️ Descargas ↓</a>
+      <a href="./Dominios/index-quejas.html">✉️ Quejas y Sugerencias</a>
+      <a href="./Dominios/index-acercaWEB.html">👥 Acerca de Nosotros!</a>
+      <a id="modal-donacion">💰 Donaciones</a>    
+    </div>
+  </nav>
+
+  <button class="to-top-btn hidden" aria-label="Subir al inicio">↑</button>
+
+  <section class="el_vacio">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece">
+    <section class="contenido">
+      <h2 class="subtitulo">Empezemos por aqui!</h2>
+      <h2 class="subtitulo2">Que es SPEED Multimedia?</h2>
+      <div class="imagen-box">
+        <img src="./recursos/captura.png" alt="Captura de la app">
+      </div>
+    </section>
+  </div>
+
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece">
+    <section class="contenido">
+      <h2 class="subtitulo">👌 Reproduce todos tus archivos de audio y video en un solo lugar.</h2>
+      <h2 class="subtitulo2">🍷 SPEED MULTIMEDIA es un software gratuito para PC donde el usuario puede reproducir todo tipo de contenido multimedia</h2>
+      <div class="imagen-box">
+        <img src="./recursos/captura6(archivos).png" alt="Captura de la app">
+      </div>
+    </section>
+  </div>
+
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece">
+    <section class="contenido">
+      <h2 class="subtitulo">✅Y si! Audio, Video, texto, y demas todo en una sola App!</h2>
+      <h2 class="subtitulo2">⚡ Facil! intuitiva! Rapida!</h2>
+      <div class="imagen-box3">
+        <img src="./recursos/captura2(imagen).png" alt="Captura de la app">
+        <img src="./recursos/captura3(texto).png" alt="Captura de la app">
+      </div>
+    </section>
+  </div>
+
+  <section class="contenido">
+    <div class="imagen-box4-hover">
+       <img src="./recursos/captura4(video).png" class="imagen-box4" alt="Captura de la app">
+    </div>
+  </section>
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece">
+    <section class="contenido">
+      <h2 class="subtitulo">🔐 La Protección esta de tu lado a modo SPEED 🔑</h2>
+      <h2 class="subtitulo2">🌀 Ten el control de tus datos!, configura una contraseña!</h2>
+      <div class="imagen-box2">
+        <img src="./recursos/captura5(contrasena).png" alt="Captura de la app">
+        <img src="./recursos/captura5(ejemplo) (1).png" alt="Captura de la app">
+      </div>
+    </section>
+  </div>
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece">
+    <section class="contenido">
+      <h2 class="subtitulo">🎵 Puedes organizar toda tu multimedia dentro de la app con pocos click</h2>
+      <h2 class="subtitulo2">📂 Con el explorador integrado mas otras funciones sin salir de la app usted tiene el control!</h2>
+      <div class="imagen-box">
+        <img src="./recursos/2025-05-22_005347.png" alt="Captura de la app">
+      </div>
+    </section>
+  </div>
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece">
+    <section class="contenido">
+      <h2 class="subtitulo">😎 Con varias Mini-Apps 🔥</h2>
+      <h2 class="subtitulo2">💻 A tu dispocición varias funciones para facilitar tu vida ✨</h2>
+      <div class="imagen-box3">
+        <img src="./recursos/captura2(imagen).png" alt="Captura de la app">
+        <img src="./recursos/2025-05-22_005202.png" alt="Captura de la app">
+      </div>
+
+      <div class="imagen-box3">
+        <img src="./recursos/2025-05-22_005236.png" alt="Captura de la app">
+        <img src="./recursos/2025-05-22_010007.png" alt="Captura de la app">
+      </div>
+    </section>
+  </div>
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+
+  <div class="hint-modal">
+    <div class="hint-content">
+      <p>Desliza hacia abajo para continuar</p>
+      <div class="scroll-hint-animation"></div>
+    </div>
+  </div>
+
+    <div class="aparece">
+      <section class="contenido">
+        <div class="descarga-container"> <!-- Contenedor responsive -->
+          <div class="descarga-modal" id="btn-ultima-version">
+            <div class="modal-contenedor1">
+              <div class="enunciado"> Obten para a ti la última versión y no olvides compartirla</div>
+              <div class="enunciado"> No tiene soporte para Win7, pero funciona para x86 y 64bit</div>
+              
+              <button class="btn-version">
+                <img src="./recursos/Down.ico" class="icoDown">
+                Pulsa Aqui Descargar sin anuncios y gratis!
+                
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <!-- Modal Donaciones -->
+  <div id="donacion-modal" class="modal">
+    <div class="modal-contenido">
+      <button class="cerrar-modal">&times;</button>
+      
+      <h2>🎉 ¡Si puedes, un tantico! 🎉</h2>
+      <p class="subtitulo-modal">Tus donaciones contribuyen al proyecto</p>
+      
+      <h3>🔍 Escanea aquí para donar <small>(¡Un café cuenta!)</small></h3>
+      <img src="./recursos/qr.jpg" alt="QR Donación" class="qr-modal">
+      
+      <h4>💖 ¡Muchas gracias por estar aquí!</h4>
+      
+      <div class="compartir-section">
+        <p>📢 ¡También nos ayudas si compartes el enlace de esta Web!</p>
+        <p class="frase-compartir">No te quedes solo con el botín... ¡Compártelo con tus amistades! 👇</p>
+        
+        <div class="botones-compartir">
+          <a href="https://t.me/share/url?url=https://tudominio.com" class="btn-compartir" target="_blank">
+            <img src="./recursos/telegram-icono.png" alt="Telegram">
+          </a>
+          <a href="https://wa.me/?text=Mira%20esta%20app%20%C2%A1Super%C3%B3%20https://tudominio.com" class="btn-compartir" target="_blank">
+            <img src="./recursos/whasapp-icono.png" alt="WhatsApp">
+          </a>
+          <a href="mailto:?subject=Te%20comparto%20SPEED%20Multimedia&body=Descarga%20aqu%C3%AD:%20https://tudominio.com" class="btn-compartir" target="_blank">
+            <img src="./recursos/correo-icono.png" alt="Correo">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="modal-compartir-donar" class="modal-compartir">
+    <div class="modal-contenido">
+      <button class="cerrar-modal-compartir">&times;</button>
+      
+      <h2>🎉 ¡Ayuda a crecer SPEED! 🎉</h2>
+      <p>¿Te gustó la página? ¡Compártela con tus amigos!</p>
+      
+      <div class="botones-compartir">
+        <a href="https://wa.me/?text=Mira%20SPEED%20Multimedia%20%C2%A1La%20mejor%20app%20de%20audio%20y%20video%20👇%20https://tudominio.com" target="_blank">
+          <img src="./recursos/whasapp-icono.png" alt="WhatsApp">
+        </a>
+        <a href="https://t.me/share/url?url=https://tudominio.com&text=Descarga%20SPEED%20Multimedia" target="_blank">
+          <img src="./recursos/telegram-icono.png" alt="Telegram">
+        </a>
+        <a href="mailto:?subject=SPEED%20Multimedia&body=Descarga%20aquí:%20https://tudominio.com" target="_blank">
+          <img src="./recursos/correo-icono.png" alt="Correo">
+        </a>
+      </div>
+  
+      <div class="seccion-donar">
+        <h3>💖 ¿Quieres apoyar el proyecto?</h3>
+        <button onclick="ModalDonaciones.open()" class="btn-donar">DONAR</button>
+      </div>
+  
+      <div class="seccion-telegram">
+        <h3>📢 Únete a nuestro canal</h3>
+        <a href="https://t.me/speedoffcelL" target="_blank" class="btn-telegram">
+          <img src="./recursos/telegram-icono.png"" alt="Unirse a Telegram">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-player">
+    <div class="progress-water" id="progress-water"></div>
+      <div class="player-controls">
+          <button class="control-btn" id="previous" title="Anterior">
+              <img src="./recursos/player/ant.png" alt="Anterior" class="control-icon">
+          </button>
+          <button class="control-btn play-pause" id="play-pause" title="Play/Pausa">
+              <img src="./recursos/player/play.png" alt="Play/Pause" class="control-icon" id="play-pause-icon">
+          </button>
+          <button class="control-btn" id="mute" title="Silenciar">
+              <img src="./recursos/player/M.png" alt="Silenciar" class="control-icon" id="mute-icon">
+          </button>
+          <button class="control-btn" id="next" title="Siguiente">
+              <img src="./recursos/player/cont.png" alt="Siguiente" class="control-icon">
+          </button>
+          <button class="control-btn2" id="add-music" title="Agregar música">
+              <img src="./recursos/player/sumar.png" alt="Agregar música" class="control-icon">
+          </button>
+          <button class="control-btn2" id="toggle-fixed" title="Fijar reproductor">
+              <img src="./recursos/player/pin.png" alt="Fijar reproductor" class="control-icon">
+          </button>
+          <button class="control-btn2" id="show-playlist" title="Mostrar lista">
+              <img src="./recursos/player/list.png" alt="Lista de reproducción" class="control-icon">
+          </button>
+          <div class="volume-slider-container">
+              <input type="range" id="volume" min="0" max="100" step="1" value="70" title="Volumen">
+          </div>
+          
+          <div class="progress-info">
+              <div class="time-info">
+                  <span id="current-time">0:00 -</span>
+                  <span id="duration">0:00</span>
+              </div>
+              <div class="progress-bar">
+                  <div class="progress" id="progress"></div>
+              </div>
+          </div>
+  
+          <div class="track-info">
+              <div class="title-container">
+                  <h3 id="track-title">EMPEZEMOS CON ROCK!!🎵</h3>
+                  <p id="track-artist">HAZ SONAR ESOS PARLANTES 🔊</p>
+              </div>
+          </div>  
+      </div>
+  </div>
+  
+  <!-- Modal de lista de reproducción -->
+  <div id="playlist-modal" class="playlist-modal">
+      <div class="modal-header" id="modal-header">
+          <h3>Lista de Reproducción</h3>
+          <button class="close-modal" id="close-modal">&times;</button>
+      </div>
+      <div class="modal-content">
+          <div class="playlist-actions">
+              <button id="clear-playlist" class="playlist-btn">Limpiar lista</button>
+              <button id="shuffle-playlist" class="playlist-btn">Mezclar</button>
+          </div>
+          <ul id="playlist" class="playlist">
+              <!-- Las canciones se agregarán aquí dinámicamente -->
+          </ul>
+      </div>
+  </div>
+  
+  <input type="file" id="file-input" accept="audio/*" multiple style="display: none;">
+
+  <script src="./JS/logica-player.js"></script>
+  <script src="./JS/logica-particulas.js"></script>
+  <script src="./JS/contador-descargas.js"></script>
+  <script src="./JS/logica.js"></script>
+  <!-- Confeti mágico -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="./js/logica-scroll.js"></script>
+</body>
+</html>

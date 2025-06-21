@@ -1,0 +1,114 @@
+/* Contenedor principal de imágenes */
+.imagen-box, .imagen-box2, .imagen-box3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 29px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/*conoces al nino negro de la familia? este es ese nino*/
+.imagen-box4 {
+  width: 90%;
+  max-width: 957px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 25px;
+
+
+  box-shadow: 0 0 20px #007bff;
+  transition: transform 0.4s ease; 
+}
+
+.imagen-box4-hover {
+  transition: transform 0.4s ease;  
+}
+.imagen-box4-hover img:hover {
+   transform: scale(1.04); 
+}
+
+/* Estilos para las imágenes individuales */
+.imagen-box img, 
+.imagen-box2 img, 
+.imagen-box3 img {
+  width: 100%;
+  max-width: 957px; /* Máximo ancho para cada imagen */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #007bff;
+  transition: transform 0.4s ease;
+  object-fit: contain;
+}
+
+/* Efecto hover */
+.imagen-box img:hover, 
+.imagen-box2 img:hover, 
+.imagen-box3 img:hover {
+  transform: scale(1.04);
+}
+
+/* Estilos específicos para imagen-box3 (2 imágenes en fila) */
+.imagen-box3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imagen-box3 img {
+  flex: 1 1 calc(50% - 20px); /* 2 imágenes por fila con gap */
+  min-width: 300px;
+}
+
+/* Estilos para los títulos */
+.subtitulo {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsivo entre 1.5rem y 2.5rem */
+  margin: 20px auto;
+  text-shadow: 0 0 10px #007bff;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+.subtitulo2 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsivo entre 1rem y 1.5rem */
+  margin: 15px auto 30px;
+  text-shadow: 0 0 10px #007bff;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .imagen-box3 img {
+    flex: 1 1 100%; /* 1 imagen por fila en móviles */
+    min-width: unset;
+  }
+  
+  .subtitulo {
+    margin: 15px auto;
+  }
+  
+  .subtitulo2 {
+    margin: 10px auto 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagen-box, .imagen-box2, .imagen-box3, .imagen-box4 {
+    width: 95%;
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .imagen-box img, 
+  .imagen-box2 img, 
+  .imagen-box3 img, 
+  .imagen-box4 img {
+    max-width: 100%;
+  }
+}

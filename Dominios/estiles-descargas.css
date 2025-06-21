@@ -1,0 +1,286 @@
+/* Estilos específicos para la página de descargas */
+.contenedor-descargas {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.version-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 60px;
+  border-left: 4px solid #007bff;
+  transition: transform 0.3s;
+}
+
+.version-card:hover {
+    box-shadow: 0 0 20px #006bff;
+    transform: scale(1.02);
+}
+
+/*Titulo descarga windows*/
+h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.version-antigua {
+  opacity: 0.8;
+  border-left-color: #ff5555;
+}
+
+.version-meta {
+  color: #aaa;
+  margin: 10px 0;
+}
+
+.features {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.features li {
+  margin-bottom: 8px;
+}
+
+.warning {
+  color: #ff5555;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.boton-descarga {
+  background: linear-gradient(to right, #007bff, #9400ff);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: transform 0.9s;
+}
+
+.boton-descarga:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(to right, #9400ff, #007bff);
+  border-radius: solid 2px rgba(51, 51, 51, 0.815);
+}
+
+
+/* estlios de targetas y modal de descargas*/
+
+/* Modal de Descarga */
+.modal-descarga {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-contenido {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.loader {
+  border: 5px solid #007bff;
+  border-radius: 50%;
+  border-top: 5px solid transparent;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: #ff5555;
+  text-align: center;
+}
+
+/* css de icono flotante */
+.icono-flotante {
+    width: 60px;
+    height: 60px;
+    white-space: nowrap;
+    overflow: visible;
+    display: flex;
+    animation: flotar 4s ease-in-out infinite;
+    pointer-events: none;
+    flex-direction: row;
+    margin-left: -21px;
+    flex-wrap: nowrap;
+    text-overflow: initial;
+    align-items: center;
+}
+
+.icono-flotante img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgb(138, 138, 138)) brightness(1.2);
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+button.toggle-info {
+    border: solid 2px #2d2d2d;
+    padding: 5px 19px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #101010;
+    color: #afafaf;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+button.toggle-info:hover {
+transform: scale(1.04);
+background: rgba(174, 0, 255, 0.39);
+}
+
+.version-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.extra-info {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.9s ease;
+      cursor: default;
+}
+
+.extra-info.activo {
+  max-height: 500px; /* un valor grande que no sobrepase el contenido */
+  opacity: 1;
+}
+
+p.soporte {
+    margin-bottom: 10px;
+    color: #abababfc;
+    font-family: fantasy;
+    font-size: large;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+p.soporte:hover {
+  color:#ff5555;
+  background: #181818;
+}
+
+.fila-boton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .version-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .boton-descarga {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .toggle-info {
+    font-size: 0.9rem;
+  }
+}
+
+#loader-tarjetas {
+  position: fixed;
+  top: 0;
+  background: #000000c9;
+  backdrop-filter: blur(6px);
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid #00f0ff;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.mensaje-loader {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.modal-descarga {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-contenido {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px #00f0ff;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.cerrar-modal:hover {
+  color: #fff;
+}
