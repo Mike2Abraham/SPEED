@@ -1,0 +1,165 @@
+/* Estilos generales para la sección "Acerca de Nosotros" */
+.acerca-de {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #1e1e2f 0%, #2a2a3a 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.acerca-de h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #6bd1ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Sección Misión/Visión */
+.mision-vision {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border-left: 4px solid #6bd1ff;
+}
+
+.mision-vision h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mision-vision p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Imagen del equipo */
+.equipo img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  border: 3px solid rgba(107, 209, 255, 0.3);
+  margin: 20px 0;
+  transition: transform 0.3s;
+}
+
+.equipo img:hover {
+  transform: scale(1.02);
+}
+
+/* Botón de donar */
+.acerca-de button {
+  background: linear-gradient(90deg, #6bd1ff 0%, #3a7bd5 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(107, 209, 255, 0.3);
+}
+
+.acerca-de button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(107, 209, 255, 0.4);
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .acerca-de {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+
+  .acerca-de h2 {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+
+  .mision-vision {
+    padding: 15px;
+  }
+
+  .mision-vision h3 {
+    font-size: 1.4em;
+  }
+
+  .mision-vision p {
+    font-size: 13px;
+  }
+
+  .acerca-de button {
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+      .el_vacio55 {
+          margin-bottom: 113px;
+    }
+}
+
+pre {
+  white-space: pre-wrap; /* Mantiene espacios y saltos */
+  font-family: monospace;
+  font-size: 2.1em;
+  font-family: revert;
+}
+
+
+/* Contenedor principal de imágenes */
+img.imagen-box4 {
+    width: 43%;
+}
+
+      .el_vacio55 {
+          margin-bottom: 113px;
+    }
+
+/* espacio entre propaganda*/
+.el_vacio555 {
+      margin-bottom: 400px;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.acerca-de {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Efecto de hover para secciones */
+.mision-vision:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.3s;
+}
+
+.subtitulo {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #007bff;
+}
+
+.subtitulo2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #007bff;
+}

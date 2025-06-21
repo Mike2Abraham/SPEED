@@ -1,0 +1,31 @@
+####
+SPEED MULTIMEDIA v1.8.20
+Subido el: 15/06/2024
+Tamaño: 194MB
+Soporte: Windows 10/11
+Esta versión incluye:
+- Soporte para 20+ formatos
+- Interfaz rediseñada
+- Corrección de bugs críticos
+link: https://github.com/tuusuario/repo/releases/v2.0.zip
+@@@@
+####
+SPEED MULTIMEDIA v1.0.90
+Subido el: 01/05/2024
+Tamaño: 33MB
+Soporte: Windows 8/10
+Mejoras en:
+- Rendimiento en HD
+- Nuevo reproductor FLAC
+link: https://github.com/tuusuario/repo/releases/v1.8.zip
+@@@@
+####
+SPEED MULTIMEDIA v1.0.26
+Subido el: 01/05/2024
+Tamaño: 144MB
+Soporte: Windows 8/10
+Mejoras en:
+- Rendimiento en HD
+- Nuevo reproductor FLAC
+link: https://github.com/tuusuario/repo/releases/v1.8.zip
+@@@@

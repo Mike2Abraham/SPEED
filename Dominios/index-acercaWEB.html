@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SPEED Multimedia - Reproductor multimedia rápido y ligero para todas tus necesidades de audio y video">
+  <meta name="keywords" content="reproductor multimedia, SPEED, descargar reproductor, audio, video">
+  <meta name="author" content="Abraham de Jesus Piniri Megret">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../recursos/iconob2.png" type="image/x-icon">
+  <title>Acerca | SPEED Multimedia</title>
+  <link rel="stylesheet" href="../estiles-menu-header.css">
+  <link rel="stylesheet" href="../estiles-descargas.css">
+  <link rel="stylesheet" href="../estilos/estiles-acercaweb.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="../recursos/iconob.png" class="logotipo">
+    </div>
+
+    <div class="titulo">SPEED ELECTRONIC</div>
+    <nav class="menu">
+      <a href="../index.html">Casa</a>
+      <a href="./index-Guiauser.html">Guía ↓</a>
+      <a href="./index.html">Descargas ↓</a>
+      <!-- Modal de abrir donacion -->
+      <div class="menu-item-contextual"> 
+        <a href="#quejas">Quejas y Sugerencias</a> 
+        <div class="menu-contextual">
+          <button class="btn-contextual" onclick="ModalDonaciones.open()">💖 Donar</button>
+        </div>
+      </div>
+      <a href="./index-acercaWEB.html">Acerca de Nosotros!</a>
+    </nav>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+     <div class="cursor-light"></div> <!-- luz que sigue el mause-->
+  </header>
+
+  <!-- Menú lateral móvil (oculto por defecto) -->
+  <div class="mobile-menu-overlay"></div>
+  <nav class="mobile-menu">
+    <button class="close-btn" aria-label="Cerrar menú">✖</button>
+    <div class="menu-links">
+      <a href="../index.html">🏠 Casa</a>
+      <a href="./index-Guiauser.html">📖 Guía ↓</a>
+      <a href="./index.html">⬇️ Descargas ↓</a>
+      <a href="#quejas">✉️ Quejas y Sugerencias</a>
+      <a href="./index-acercaWEB.html">👥 Acerca de Nosotros!</a>
+      <a onclick="ModalDonaciones.open()">💰 Donaciones</a>    
+    </div>
+  </nav>
+
+  <button class="to-top-btn hidden" aria-label="Subir al inicio">↑</button>
+
+  <section class="el_vacio55">
+      <h1> </h1>
+  </section>
+
+  <section class="contenido">
+    <h2 class="subtitulo">✅Desliza para leer!!</h2>
+    <h2 class="subtitulo2">⚡ Conoce algo de nosotros!!</h2>
+    <div class="imagen-box3">
+      <img src="../recursos/ICONO.png" class="imagen-box4" alt="Captura de la app">
+    </div>
+  </section>
+
+  
+  <section class="el_vacio555">
+      <h1> </h1>
+  </section>
+
+
+  <div class="aparece">
+    <section class="acerca-de">
+      <h2>¿Quién está detrás de SPEED?</h2>
+      <div class="mision-vision">
+        <h3>🚀 Mi Misión</h3>
+        <pre id="contenido-txt">
+        <p>1. 🚀 Misión y Visión
+          Misión:
+          "Crear herramientas multimedia intuitivas y potentes para que cualquier usuario, sin importar su nivel técnico, pueda disfrutar y organizar su contenido digital con libertad."
+          
+          Visión:
+          "Ser la plataforma de referencia en software ligero y personalizable, rompiendo barreras entre tecnología y usuario final."
+          
+          2. 👥 ¿Quiénes Somos?
+          Soy un aprendis en esto de la programación:
+          "Me llamo Abraham de Jesús Piñirí."
+                    
+          3. 📜 Historia del Proyecto
+          Origen:
+          "SPEED nació hace unos meces como un proyecto personal para resolver [problema específico: ej. las pc habeces la cargaamos de peliculas musicas y vidos pero con esta app organizarlo es fácil sencillo y rapido ahi es donde entra SPEED."
+          
+          4. 🌟 Valores
+          Simplicidad: "Menos es más. Interfaces claras, cero bloatware."
+          
+          Privacidad: "Tu contenido nunca se sube a la nube. Todo queda local."
+          
+          Comunidad: "Escuchamos feedback real para mejorar."
+          
+          5. 🔧 Tecnología Usada
+          Lenguajes/Herramientas:
+          "Polvorones chupa chupas y mucho café ☕. aaa y ame acorde y visual code entre otras más"
+          
+          Optimización:
+          "SPEED consume mucha RAM y video pero con el tiempo ire mejorando eso."
+          
+          6. 🤝 Invitación a Colaborar
+          Open Source:
+          "¿Eres desarrollador? Únete a GitHub y ayuda a mejorar SPEED."
+          
+          Donaciones:
+          "¿Te gusta el proyecto? Un café virtual nos mantiene motivados ☕→ [Botón de Donar]."
+          
+          Futuro:
+          "Trabajo en versión para Linux, android y soporte para subtítulos automáticos."</p>
+          </pre>
+      </div>
+      <div class="equipo">
+        <img src="./recursos/equipo.png" alt="Equipo SPEED">
+      </div>
+      <button onclick="ModalDonaciones.open()">Apoya el Proyecto</button>
+    </section>
+  </div> 
+  
+  <!-- Confeti mágico -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="./logica-subWeb.js"></script>
+</body>
+</html>

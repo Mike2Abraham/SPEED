@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SPEED Multimedia - Reproductor multimedia rápido y ligero para todas tus necesidades de audio y video">
+  <meta name="keywords" content="reproductor multimedia, SPEED, descargar reproductor, audio, video">
+  <meta name="author" content="Abraham de Jesus Piniri Megret">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../recursos/iconob2.png" type="image/x-icon">
+  <title>Guia de Usuario | SPEED Multimedia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../estiles-menu-header.css">
+  <link rel="stylesheet" href="../estilos/estiles-Guia.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="../recursos/iconob.png" class="logotipo">
+    </div>
+
+    <div class="titulo">SPEED ELECTRONIC</div>
+    <nav class="menu">
+      <a href="../index.html">Casa</a>
+      <a href="./index-Guiauser.html">Guía ↓</a>
+      <a href="./index.html">Descargas ↓</a>
+      <!-- Modal de abrir donacion -->
+      <div class="menu-item-contextual"> 
+        <a href="./index-quejas.html">Quejas y Sugerencias</a> 
+        <div class="menu-contextual">
+          <button class="btn-contextual" onclick="ModalDonaciones.open()">💖 Donar</button>
+        </div>
+      </div>
+      <a href="./index-acercaWEB.html">Acerca de Nosotros!</a>
+    </nav>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+     <div class="cursor-light"></div> <!-- luz que sigue el mause-->
+  </header>
+
+  <!-- Menú lateral móvil (oculto por defecto) -->
+  <div class="mobile-menu-overlay"></div>
+  <nav class="mobile-menu">
+    <button class="close-btn" aria-label="Cerrar menú">✖</button>
+    <div class="menu-links">
+      <a href="../inits.html">🏠 Casa</a>
+      <a href="./index-Guiauser.html">📖 Guía ↓</a>
+      <a href="./index.html">⬇️ Descargas ↓</a>
+      <a href="./index-quejas.html">✉️ Quejas y Sugerencias</a>
+      <a href="./index-acercaWEB.html">👥 Acerca de Nosotros!</a>
+      <a onclick="ModalDonaciones.open()">💰 Donaciones</a>    
+    </div>
+  </nav>
+
+  <button class="to-top-btn hidden" aria-label="Subir al inicio">↑</button>
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece">
+    <div class="modal-guia">
+       <section class="contenido">
+         <h2 class="subtitulo">📝 Quejas y Sugerencias!</h2>
+         <h2 class="subtitulo2">🤔 Quieres quejarte? encontraste bug ❓</h2>
+         <h2 class="subtitulo2">😁 Por Favor no dudes en enviarnos algun comentario al respecto</h2>
+         <a href="./index-quejas.html">✉️ Preciona Aqui para algunas opiniones o dudas!</a>
+       </section>
+    </div>
+  </div> 
+
+  <!-- Reemplaza el iframe actual por esto -->
+  <div class="pdf-container">
+    <!-- Desktop: Embed nativo -->
+    <embed 
+      id="pdf-viewer"
+      src="../recursos/speedusuario.pdf#toolbar=0&navpanes=0" 
+      type="application/pdf" 
+      class="pdf-desktop"
+    >
+    
+    <!-- Controles PDF personalizados -->
+    <div class="pdf-controls" id="pdf-controls">     
+      <button class="download-btn" id="download-pdf" title="Descargar manual">
+        <i class="fas fa-download"></i>
+      </button>
+    </div>
+      
+    <!-- Móvil: Imagen de preview + botón de descarga -->
+    <div class="pdf-mobile">
+      <img src="../recursos/pdf.png" alt="Vista previa del manual">
+      <a href="../recursos/speedusuario.pdf" download class="btn-descarga">
+        📥 Descargar Manual Completo
+      </a>
+      <p class="hint-mobile">(Estas en un movil! para ver pdf puedes descargarlo y verlo en otra app nativa sino cambiate a PC)</p>
+      <p class="hint-mobile">(Pero sigue deslizando para ver tutoriales!)</p>
+    </div>
+  </div>
+  
+  <script>  
+    document.getElementById('download-pdf').addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = '../recursos/speedusuario.pdf';
+      link.download = 'Manual_SPEED_Multimedia.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+    
+    // Ocultar/mostrar controles cuando el mouse está fuera/dentro
+    const pdfControls = document.getElementById('pdf-controls');
+    let hideTimeout;
+    
+    pdfControls.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout);
+      pdfControls.style.opacity = '1';
+    });
+    
+    pdfControls.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(() => {
+        pdfControls.style.opacity = '0.7';
+      }, 1000);
+    });
+  </script>
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece"> 
+  <section class="contenido">
+    <h2 class="subtitulo">🎥 Mira un pequeño tutorial de Instalación!</h2>
+    <h2 class="subtitulo2">🏁 Mira estos simples pasos tu app volara!</h2>
+    <div class="imagen-box">
+      <!-- primer video -->
+      <div class="video-container">
+        <iframe class="inframe-yt"
+          src="https://www.youtube.com/embed/CODIGO_DEL_VIDEO?controls=1" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+  </div> 
+
+  <section class="el_vacio2">
+      <h1> </h1>
+  </section>
+
+  <div class="aparece"> 
+  <section class="contenido">
+    <h2 class="subtitulo">❌ Te Dio algun error cuando lo instalaste por primera vez?</h2>
+    <h2 class="subtitulo2">🎦 Mira estos simples pasos, es facil reparalo tu mismo!</h2>
+    <div class="imagen-box">
+      <!-- Segundo video -->
+      <div class="video-container">
+        <iframe class="inframe-yt"
+          src="https://www.youtube.com/embed/CODIGO_DEL_VIDEO?controls=1" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+  </div> 
+  
+  
+  <!-- Confeti mágico -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="./logica-subWeb.js"></script>
+</body>
+</html>
