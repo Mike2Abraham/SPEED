@@ -12,6 +12,29 @@
   <title>Descargas | SPEED Multimedia</title>
   <link rel="stylesheet" href="../estiles-menu-header.css">
   <link rel="stylesheet" href="./estiles-descargas.css">
+  <style>
+    /* Estilo para el botón de "no carga" */
+    .btn-no-carga {
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .btn-no-carga:hover {
+      background: #ff0000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    .btn-no-carga:active {
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -63,8 +86,25 @@
     <div class="spinner"></div>
     <p class="mensaje-loader">⏳ Espera... las tarjetas son tímidas dale su tiempo!</p>
     <p class="mensaje-loader">En caso de no salir en 1 min Recarga la pagina</p>
+    <button class="btn-no-carga" id="btn-no-carga">¡SI NO CARGA PRESIONA AQUÍ! HASLO 2 VECES</button>
   </div>
-
+    <!-- Script para el botón de "no carga" -->
+  <script>
+    document.getElementById('btn-no-carga').addEventListener('click', function() {
+      document.getElementById('loader-tarjetas').style.display = 'none';
+      
+      // Opcional: Mostrar mensaje de que se ocultó
+      const main = document.querySelector('main.contenedor-descargas');
+      if (main) {
+        const mensaje = document.createElement('p');
+        mensaje.textContent = 'Se ocultó el cargador. Si necesitas verlo de nuevo, recarga la página.';
+        mensaje.style.color = '#ff4444';
+        mensaje.style.textAlign = 'center';
+        mensaje.style.marginTop = '20px';
+        main.appendChild(mensaje);
+      }
+    });
+  </script>
     
     <!-- Tarjeta de versión (ejemplo v2.0) -->
     
