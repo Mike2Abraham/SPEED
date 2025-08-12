@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (isPlaying) {
             audio.pause();
-            playPauseIcon.src = './JS/play.png';
+            playPauseIcon.src = './js/play.png';
         } else {
             audio.play();
-            playPauseIcon.src = './JS/pause.png';
+            playPauseIcon.src = './js/pause.png';
         }
         isPlaying = !isPlaying;
     }
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMute() {
         isMuted = !isMuted;
         audio.muted = isMuted;
-        muteIcon.src = isMuted ? './JS/m-muted.png' : './js/M.png';
+        muteIcon.src = isMuted ? './js/m-muted.png' : './js/M.png';
     }
 
     // Actualizar tiempo de reproducción
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('playerFixed', isFixed);
         
         // Cambiar icono
-        toggleFixedBtn.querySelector('img').src = isFixed ? './JS/pin.png' : './JS/pin.png';
+        toggleFixedBtn.querySelector('img').src = isFixed ? './js/pin.png' : './js/pin.png';
     }
 
     // Mostrar/ocultar lista de reproducción
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
         progressBar.style.width = '0%';
         document.getElementById('progress-water').style.width = '0%';
         isPlaying = false;
-        playPauseIcon.src = './JS/play.png';
+        playPauseIcon.src = './js/play.png';
     }
 
     // Actualizar la UI de la lista de reproducción
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
             progressBar.style.width = '0%';
             document.getElementById('progress-water').style.width = '0%';
             isPlaying = false;
-            playPauseIcon.src = './JS/play.png';
+            playPauseIcon.src = './js/play.png';
         } else {
             loadTrack(currentTrackIndex);
         }

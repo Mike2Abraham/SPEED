@@ -1,6 +1,7 @@
 /* Estilos base del reproductor */
 .bottom-player {
     position: relative;
+    overflow: hidden;
     bottom: 20px;
     left: 9%;
     height: 76px;
@@ -18,7 +19,7 @@
 }
 
 .bottom-player:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .bottom-player.fixed {
@@ -39,7 +40,6 @@
 .player-controls {
     display: flex;
     align-items: center;
-    gap: 27px;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -48,6 +48,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
+        margin-left: 15px;
     transition: all 0.2s ease;
     width: 36px;
     height: 36px;
@@ -63,13 +64,33 @@
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     padding: 5px;
+}
+
+.control-btn2-5 {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    margin-left: 19px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 5px;
+}
+.control-btn2-5 img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
 }
 
 .control-btn2 img {
@@ -89,14 +110,12 @@
 }
 
 .control-btn img {
-    width: 250%;
-    height: 250%;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
 .play-pause {
-    width: 38px;
-    height: 37px;
     object-fit: contain;
 }
 
@@ -107,7 +126,7 @@
 .volume-slider-container {
     display: flex;
     align-items: center;
-    margin-left: 5px;
+    margin-left: 35px;
 }
 
 #volume {
@@ -201,7 +220,8 @@
         rgba(37, 99, 235, 0.8) 25%,
         rgba(37, 99, 235, 0.15) 50%,
         rgba(37, 99, 235, 0.8) 75%,
-        rgba(37, 99, 235, 0.45) 100%
+        rgba(37, 99, 235, 0.45) 90%,
+        rgba(37, 99, 235, 0.1) 100%
     );
     background-size: 200% 100%;
     animation: waterFlow 3s linear infinite;
@@ -299,6 +319,7 @@
     color: white;
     cursor: pointer;
     transition: background-color 0.2s;
+    align-items: center;
     display: flex;
     justify-content: space-between;
 }
@@ -321,7 +342,7 @@
 }
 
 /* 🔥 Estilos específicos para móvil (responsive) */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .playlist-modal {
     width: 95% !important;
     max-width: 95% !important;
@@ -339,7 +360,7 @@
     padding: 6px !important;
   }
 
-  /* 🎵 Barra de progreso */
+  /*  Barra de progreso */
   .progress-info {
     display: none;
   }
@@ -348,49 +369,45 @@
     height: 0 !important;
   }
 
-  /* 🔉 Control de volumen */
-  .volume-slider-container {
-    display: none !important;
-  }
-
-  /* 🎚️ Botón de volumen alternativo (móvil) */
+  /* Botón de volumen alternativo (móvil) */
   #mute {
     display: flex !important;
-    margin-right: 10px !important;
+    margin-right: 0px !important;
+    margin-left: 11px !important;
   }
 
-  /* ⏯️ Botón Play/Pause más grande */
+  /*  Botón Play/Pause más grande */
   .play-pause {
     width: 42px !important;
     height: 42px !important;
   }
 
-  /* 📲 Ajuste general del reproductor */
+  /*  Ajuste general del reproductor */
   .bottom-player {
-    padding: 10px !important;
+    padding: 5px 2px !important;
     height: auto !important;
     flex-wrap: wrap !important;
+    overflow: hidden !important;
   }
 
   .player-controls {
-    gap: 19px !important;
-    justify-content: center !important;
+    gap: 0px !important;
   }
 
-  /* 🏷️ Info de la canción */
+  /*  Info de la canción */
   .track-info {
     display: none;
   }
 
-  /* 🕒 Tiempos de duración */
+  /*  Tiempos de duración */
   .time-info {
     font-size: 5px !important;
   }
 
   .bottom-player {
     left: 2%;
-    height: 76px;
-    width: 97%;
+    height: 48px !important;
+    width: 95%;
   }
 
   .modal-header {

@@ -5,6 +5,295 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+button, img, .list-item {
+  user-select: none;
+}
+
+label {
+  user-select: none;
+}
+
+div {
+  user-select: none;
+}
+/* Estilos cursores SPEED */
+/* Estilos para los cursores personalizados */
+body {
+    cursor: url('cursors/cursor-default.cur'), auto !important;
+}
+
+.menu-modal label {
+    cursor: url('cursors/cursor-default.cur'), auto !important;
+}
+
+.label {
+    cursor: url('cursors/cursor-default.cur'), auto !important;
+}
+
+.menu-modal li {
+    cursor: url('cursors/cursor-pointer.cur'), pointer !important;
+}
+
+.menu-modal h1 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.menu-modal h2 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.menu-modal h3 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.menu-modal h4 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.menu-modal img {
+    cursor: url('cursors/cursor-help1.cur'), pointer !important;
+}
+
+.h1 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.h2 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.h3 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.h4 {
+    cursor: url('cursors/cursor-default.cur'), pointer !important;
+}
+
+.img {
+    cursor: url('cursors/cursor-help1.cur'), pointer !important;
+}
+
+/* Cursores para otros menús y listas contextuales sin tocar el HTML */
+.menu-modal li,
+.settings-modal li,
+.guide-modal li,
+.library-menu li,
+.playlist-list li,
+.context-menu li,
+.modal-content li,
+.dropdown-menu li,
+.menu-version,
+.menu-divider {
+    cursor: url('cursors/cursor-pointer.cur'), pointer !important;
+}
+
+/* Cursores para elementos de menú que son solo informativos (no clickeables) */
+.menu-modal li.menu-version,
+.menu-modal li.menu-divider {
+    cursor: url('cursors/cursor-default.cur'), auto !important;
+}
+
+/* Cursor de selección (hover en elementos clickeables) */
+.playlist-item, 
+.library-item, 
+button, 
+a, 
+input[type="checkbox"], 
+.control-btn,
+.video-control-btn {
+    cursor: url('cursors/cursor-pointer.cur'), pointer !important;
+}
+
+/* Cursor de texto/edición */
+input[type="text"], 
+textarea, 
+[contenteditable="true"] {
+    cursor: url('cursors/cursor-text.cur'), text !important;
+}
+
+/* Cursor durante arrastre */
+.draggable {
+    cursor: url('cursors/curweb.cur'), grab !important;
+}
+
+.draggable:active {
+    cursor: url('cursors/curweb.cur'), grabbing !important;
+}
+
+/* Estilos para los cursores personalizados */
+body {
+    cursor: url('cursors/cursor-default.cur'), auto !important;
+}
+
+/* 1. Cursor normal (default) */
+html {
+    cursor: url('cursors/cursor-default.cur'), auto !important;
+}
+
+/* 2. Cursor de enlace/hipervínculo */
+a, a *, [href], [href] * {
+    cursor: url('cursors/cursor-link.cur'), pointer !important;
+}
+
+/* 3. Cursor de texto/edición */
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="search"], 
+input[type="url"], 
+input[type="tel"], 
+input[type="number"], 
+textarea, 
+[contenteditable="true"], 
+[contenteditable="true"] *,
+.selectable-text {
+    cursor: url('cursors/cursor-text.cur'), text !important;
+}
+
+/* 4. Cursor de espera/carga */
+[aria-busy="true"], 
+.wait-cursor, 
+.loading-cursor {
+    cursor: url('cursors/cursor-wait.cur'), wait !important;
+}
+
+/* 5. Cursor de ayuda */
+[title]:hover, 
+.help-cursor {
+    cursor: url('cursors/cursor-help.cur'), help !important;
+}
+
+/* 6. Cursor de no permitido */
+.disabled, 
+[disabled], 
+[aria-disabled="true"], 
+.not-allowed {
+    cursor: url('cursors/cursor-no.ani'), not-allowed !important;
+}
+
+/* 7. Cursor de movimiento */
+.draggable, 
+.move-cursor {
+    cursor: url('cursors/cursor-curweb.png'), move !important;
+}
+
+/* 8. Cursor de precisión (crosshair) */
+.canvas-cursor, 
+.drawing-area, 
+.precision-cursor {
+    cursor: url('cursors/cursor-punta.png'), crosshair !important;
+}
+
+/* 9. Cursor de redimensionamiento */
+.resize-cursor, 
+.resizable-handle {
+    cursor: url('cursors/cursor-resize.cur'), col-resize !important;
+}
+
+/* 10. Cursor de selección de texto */
+::selection {
+    cursor: url('cursors/cursor-text.cur'), text !important;
+}
+
+/* 11. Cursor de progreso (cuando algo se está cargando pero es interactivo) */
+.progress-cursor {
+    cursor: url('cursors/cursor-progress.cur'), progress !important;
+}
+
+/* 12. Cursor para elementos clickeables */
+button, 
+.button, 
+[role="button"], 
+[onclick], 
+.clickable, 
+.playlist-item, 
+.library-item, 
+input[type="checkbox"], 
+input[type="radio"], 
+input[type="submit"], 
+input[type="button"], 
+.control-btn,
+.video-control-btn,
+.selectable-item {
+    cursor: url('cursors/cursor-pointer.cur'), pointer !important;
+}
+
+/* 13. Cursor de zoom */
+.zoom-in {
+    cursor: url('cursors/cursor-zoom-in.cur'), zoom-in !important;
+}
+
+.zoom-out {
+    cursor: url('cursors/cursor-zoom-out.cur'), zoom-out !important;
+}
+
+/* 14. Cursor de arrastre específico */
+.draggable:active {
+    cursor: url('cursors/cursor-curweb.cur'), grabbing !important;
+}
+
+/* 15. Cursor para columnas redimensionables */
+.resize-column {
+    cursor: url('cursors/cursor-col-resize.cur'), col-resize !important;
+}
+
+/* 16. Cursor para filas redimensionables */
+.resize-row {
+    cursor: url('cursors/cursor-row-resize.cur'), row-resize !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* fuente global*/
 @font-face {
     font-family: 'Titulobienvenida';
@@ -59,8 +348,25 @@ body {
   text-shadow: 0 0 10px #007bff;
 }
 
+/*negativo los sustitulos*/
+.subtitulo_negat {
+  font-size: 1.8em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #000000;
+  text-shadow: 0 0 10px #007bff;
+}
+
+.subtitulo2_negat {
+font-size: 1em;
+    margin-bottom: 20px;
+    margin-top: 14px;
+    color: #000000;
+    text-shadow: 0 0 10px #007bff;
+}
+
 img.logotipo {
-    width: 83px;
+    width: 65px;
 }
 
 .navbar {
@@ -71,7 +377,8 @@ img.logotipo {
     justify-content: space-between;
     padding: 20px 30px;
     z-index: 1000;
-    background: linear-gradient(to bottom, #5f00ff, #007bff);
+    overflow: hidden;
+    background: linear-gradient(to bottom, #080031, #007bff);
     background-repeat: no-repeat;
     transition: all 0.6s ease;
     height: 590px;
@@ -86,12 +393,14 @@ img.logotipo {
 .navbar.contraido {
   height: 70px;
   padding: 10px 30px;
+  background: linear-gradient(to bottom, #866ff9, #007bff);
   flex-direction: row;
 }
 
 /* Logo y título en el header */
 .logo {
   width: 50px;
+  margin-top: -12px;
   height: 50px;
   background-color: #007bff;
   border-radius: 50%;
@@ -106,7 +415,7 @@ img.logotipo {
 .titulo {
   font-size: 1.5em;
   font-weight: bold;
-  margin-top: -67px !important;
+      margin-top: -47px !important;
   color: white;
   text-shadow: 0 0 14px #9400ff;
   margin: 0px 78px; /* Espacio entre logo y menú */
@@ -120,10 +429,10 @@ img.logotipo {
   transition: opacity 0.4s ease;
 
 
-  display: flex;
-  gap: 15px; 
-  margin-top: -67px;
-  flex-wrap: wrap;
+    gap: 1px;
+    margin-top: -48px;
+    flex-direction: row;
+    align-items: center;
 }
 
 .navbar.contraido .menu {
@@ -136,13 +445,16 @@ img.logotipo {
 }
 
 .menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow: 0 0 10px #121212;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 10px #121212;
+    padding: 0px 6px;
+    display: flex;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    flex-direction: row;
+    align-items: center;
 }
 
 .menu a:hover {
@@ -215,6 +527,11 @@ img.logotipo {
      cursor: default;
   animation: colorScroll 10s ease infinite;
   white-space: nowrap;
+
+  filter: drop-shadow(1px 1px 0 rgb(189, 189, 189))
+          drop-shadow(-1px -1px 0 rgb(189, 189, 189))
+          drop-shadow(1px -1px 0 rgb(189, 189, 189))
+          drop-shadow(-1px 1px 0 rgb(189, 189, 189));
 }
 
 
@@ -262,7 +579,7 @@ img.logotipo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   transition: transform 0.3s ease;
 }
 
@@ -278,18 +595,35 @@ img.logotipo {
   width: 100%;
   max-width: 431px;
   color: #dfffff;
-  background: #01b100;
+ background: #01b100;
   font-size: clamp(16px, 2vw, 20px); /* Tamaño responsive */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: transform 0.4s ease;
+  transition: all 0.4s ease;
   cursor: pointer;
+  
 }
 
 .btn-version:hover {
   transform: scale(1.1);
+  background-size: 500% 300% !important;
+  animation: btnversion 12s linear infinite;
+  background: linear-gradient(
+      90deg,
+      rgb(255, 0, 0) 0%,
+      rgb(21, 255, 0) 25%,
+      rgb(233, 250, 0) 50%,
+      rgb(255, 153, 0) 75%,
+      rgb(255, 0, 153) 90%,
+      rgb(255, 0, 0) 100%
+  );
+}
+
+@keyframes btnversion {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 /* ----- Ícono ----- */
@@ -322,9 +656,9 @@ button#btn-ultima-version {
 /* luz para el header*/
 .cursor-light {
   position: absolute;
-  width: 203px;
-  height: 203px;
-  background: radial-gradient(circle, rgb(133 0 255 / 97%) 0%, rgb(0 123 255 / 5%) 70%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgb(133 0 255 / 37%) 0%, rgb(0 123 255 / 0%) 70%);
   border-radius: 50%;
   pointer-events: none; /* Permite clicks a través de la luz */
   transform: translate(-50%, -50%);
@@ -478,16 +812,24 @@ button#btn-ultima-version {
 
 .menu-links {
   display: flex;
+  z-index: 10;
   flex-direction: column;
   padding: 80px 5px 20px;
   gap: 15px;
+  overflow: hidden;
   font-size: 20px;
 }
+
+  .mobile-menu {
+    overflow: hidden;
+  }
 
 .menu-links a {
   color: white;
   text-decoration: none;
   padding: 8px;
+  background: #3e3f3fbd;
+  backdrop-filter: blur(10px);
   border-radius: 5px;
   transition: background 0.3s;
 }
@@ -513,6 +855,7 @@ button#btn-ultima-version {
 
 .mobile-menu.active {
   left: 0 !important;
+      overflow: hidden;
 }
 
 .mobile-menu-overlay {
@@ -680,7 +1023,7 @@ button#btn-ultima-version {
 }
 
 .menu-item-contextual::after {
-  content: " ▼";
+  /*content: " ▼";*/
   font-size: 0.8em;
 }
 
@@ -775,3 +1118,349 @@ button#btn-ultima-version {
 .btn-telegram img {
   width: 80px;
 }
+
+
+
+/*estilos para historia*/
+.Contenedor-historia {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.amanecer {
+    background: #ffffff;
+    width: 100%;
+    display: flex;
+    padding: 15px 0px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aparece-terminacion1 {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(360deg, #fffffffa, #ffffff00);
+}
+
+.aparece-terminacion {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(180deg, #fffffffa, #ffffff00);
+}
+
+.historia {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    gap: 40px;
+    max-width: 98%;
+    background: #e8c3ff;
+    border-radius: 30px;
+    padding: 20px 0px;
+    overflow-y: hidden;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.container-historia {
+    background: #b197ff;
+    width: 650px;
+    border: 2px solid #000aff;
+    min-width: 650px;
+    display: flex;
+    border-radius: 40px;
+    height: 422px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.container-historia:hover {
+  transform: scale(1.05);
+}
+
+
+.imagen-boxH {
+    /*height: auto;*/
+    height: 320px;
+    width: 98%;
+    border-radius: 17px;
+}
+
+.atardecer {
+    background: linear-gradient(360deg, #1a1733, #4e56af);
+    width: 100%;
+    height: 990px;
+}
+
+.flooter {
+    margin: 20px;
+}
+
+.menu-img {
+    position: absolute;
+    width: 139%;
+    transform: rotate(337deg);
+    left: -44px;
+    bottom: 10px;
+    z-index: 5;
+}
+
+.contenido-flooter {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 21px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.cabeza-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.Compartidera {
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+}
+
+.icoE {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+/* Estilos para las imágenes individuales */
+.imagen-box img, 
+.imagen-box2 img, 
+.imagen-box3 img {
+  width: 100%;
+  max-width: 957px; /* Máximo ancho para cada imagen */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #007bff;
+  transition: transform 0.4s ease;
+  object-fit: contain;
+}
+
+/* Efecto hover */
+.imagen-box img:hover, 
+.imagen-box2 img:hover, 
+.imagen-box3 img:hover {
+  transform: scale(1.04);
+}
+
+/* Estilos específicos para imagen-box3 (2 imágenes en fila) */
+.imagen-box3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imagen-box3 img {
+  flex: 1 1 calc(50% - 20px); /* 2 imágenes por fila con gap */
+  min-width: 300px;
+}
+
+
+/* Contenedor principal de imágenes */
+.imagen-box, .imagen-box2, .imagen-box3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 29px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/*conoces al nino negro de la familia? este es ese nino*/
+.imagen-box4 {
+  width: 90%;
+  max-width: 957px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 25px;
+
+
+  box-shadow: 0 0 20px #007bff;
+  transition: transform 0.4s ease; 
+}
+
+.imagen-box4-hover {
+  transition: transform 0.4s ease;  
+}
+.imagen-box4-hover img:hover {
+   transform: scale(1.04); 
+}
+
+
+/* Estilos para los títulos */
+.subtitulo {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsivo entre 1.5rem y 2.5rem */
+  margin: 20px auto;
+  text-shadow: 0 0 10px #007bff;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+.subtitulo2 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsivo entre 1rem y 1.5rem */
+  margin: 15px auto 30px;
+  text-shadow: 0 0 10px #007bff;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 868px) {
+  .imagen-box3 img {
+    flex: 1 1 100%; /* 1 imagen por fila en móviles */
+    min-width: unset;
+  }
+  
+  .subtitulo {
+    margin: 15px auto;
+  }
+  
+  .subtitulo2 {
+    margin: 10px auto 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagen-box, .imagen-box2, .imagen-box3, .imagen-box4 {
+    width: 95%;
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .imagen-box img, 
+  .imagen-box2 img, 
+  .imagen-box3 img, 
+  .imagen-box4 img {
+    max-width: 100%;
+  }
+}
+
+
+/* 📁 estilos-animaciones.css (o añádelo a tu CSS existente) */
+/* Añade esto a tu hoja de estilos */
+.LUNAs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden; /* Recorta las gotas que salgan del contenedor */
+}
+
+.gota {
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    rgba(173, 216, 230, 0.8) 70%, 
+    transparent 100%
+  );
+  animation: caer 2s linear forwards; /* 'forwards' mantiene el estado final */
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Contenedores */
+.nubesL, .nubesR {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998; /* Por debajo de la lluvia (z-index: 9999) */
+  overflow: hidden;
+}
+
+/* Nubes comunes */
+.nube {
+  position: absolute;
+  opacity: 0.7;
+  transition: opacity 1.5s ease-out; 
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/* Nubes izquierda a derecha */
+.nubesL .nube {
+  left: -200px; /* Inicio fuera de pantalla */
+  animation-name: moverLtoR;
+}
+
+/* Nubes derecha a izquierda */
+.nubesR .nube {
+  right: -200px; /* Inicio fuera de pantalla */
+  animation-name: moverRtoL;
+}
+
+/* Animaciones */
+@keyframes moverLtoR {
+  to {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+@keyframes moverRtoL {
+  to {
+    transform: translateX(calc(-100vw - 200px));
+  }
+}
+
+
+.boton-de-nubes {
+    width: 50px;
+    height: 50px;
+    transition: all 0.6s ease;
+}
+
+.btn-destructor {
+  width: 46px;
+  height: 46px;
+  bottom: 10px;
+  border: none;
+  background: none;
+  left: 9px;
+  position: fixed;
+  z-index: 99999999999999999999999999999999;
+}
+
+.boton-de-nubes:hover {
+  transform: scale(1.1);
+}
+
+/*<img src="./recursos/iconitos/dado.png">*/
