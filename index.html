@@ -8,8 +8,8 @@
   <meta name="author" content="Abraham de Jesus Piniri Megret">
   
   <!-- Favicon -->
-  <link rel="icon" href="./recursos/iconob2.png" type="image/x-icon">
-  <title>SPEED Electronic 2.0</title>
+  <link rel="icon" href="./recursos/ICONO.png" type="image/x-icon">
+  <title>SPEED Electronic</title>
   <link rel="stylesheet" href="./estilos/Estiles.css">
   <link rel="stylesheet" href="./estilos/Estiles-movil.css">
   <link rel="stylesheet" href="./estilos/estiles-player.css">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./estilos/Estiles-animation.css">
 </head>
 <body>
-
+  <!--Header-->
   <header class="navbar">
     <div class="logo">
       <img src="./recursos/iconob.png" class="logotipo">
@@ -42,17 +42,17 @@
     <!-- Menú (desktop) -->
     <div class="titulo">SPEED ELECTRONIC</div>
     <nav class="menu">
-      <a href="../index.html">Casa</a>
-      <a href="./Dominios/index-Guiauser.html">Guía ↓</a>
-      <a href="./Dominios/index.html">Descargas ↓</a>
+      <a href="../index.html"> <img class="icoE" src="./recursos/iconitos/casa.png">Casa</a>
+      <a href="./Dominios/index-Guiauser.html"><img class="icoE" src="./recursos/iconitos/pegar.png">Guía</a>
+      <a href="./Dominios/index.html"><img class="icoE" src="./recursos/iconitos/extortar-list.png">Descargas</a>
       <!-- Modal de abrir donacion -->
       <div class="menu-item-contextual"> 
-        <a href="./Dominios/index-quejas.html">Quejas y Sugerencias</a> 
+        <a href="./Dominios/index-quejas.html"><img class="icoE" src="./recursos/iconitos/quejas.png">Quejas y Sugerencias</a> 
         <div class="menu-contextual">
-          <button class="btn-contextual" onclick="abrirModalDonaciones()">💖 Donar</button>
+          <button class="btn-contextual">💖 Donar</button>
         </div>
       </div>
-      <a href="./Dominios/index-acercaWEB.html">Acerca de Nosotros!</a>
+      <a href="./Dominios/index-acercaWEB.html"><img class="icoE" src="./recursos/iconitos/bolos.png">Acerca de Nosotros!</a>
     </nav>
      <div class="cursor-light"></div> <!-- luz que sigue el mause-->
   </header>
@@ -62,13 +62,14 @@
   <nav class="mobile-menu">
     <button class="close-btn" aria-label="Cerrar menú">✖</button>
     <div class="menu-links">
-      <a href="../index.html">🏠 Casa</a>
+      <a href="./index.html">🏠 Casa</a>
       <a href="./Dominios/index-Guiauser.html">📖 Guía ↓</a>
       <a href="./Dominios/index.html">⬇️ Descargas ↓</a>
       <a href="./Dominios/index-quejas.html">✉️ Quejas y Sugerencias</a>
       <a href="./Dominios/index-acercaWEB.html">👥 Acerca de Nosotros!</a>
-      <a id="modal-donacion">💰 Donaciones</a>    
+      <a onclick="ModalDonaciones.open()">💰 Donaciones</a>    
     </div>
+    <img src="./recursos/sp2.png" class="menu-img">
   </nav>
 
   <button class="to-top-btn hidden" aria-label="Subir al inicio">↑</button>
@@ -77,6 +78,7 @@
       <h1> </h1>
   </section>
 
+  <div class="LUNAs"></div>
   <div class="aparece">
     <section class="contenido">
       <h2 class="subtitulo">Empezemos por aqui!</h2>
@@ -87,11 +89,72 @@
     </section>
   </div>
 
+  <div class="aparece">
+    <div class="Contenedor-historia">
+      
+      <div class="nubesL"></div> <!-- Nubes de izquierda a derecha -->
+      <div class="nubesR"></div> <!-- Nubes de derecha a izquierda -->
+      <div class="amanecer">
+        <h2 class="subtitulo_negat">SPEED MULTIMEDIA:</h2>
+        <div class="EXplicacion">
+          <div class="mision-sp">
+            <p class="PpP" >
+            SPEED es un software (por ahora para PC) diseñado para organizar y disfrutar toda tu multimedia de una forma cómoda y sencilla.
+            Tú tienes el control de:
+            ✅ Videos ✅ Audios ✅ Imágenes ✅ Documentos ✅ Grabaciones de voz
+            Todo en un mismo lugar, con herramientas integradas como convertidores de formatos (¡cámbialos a tu gusto!) y otras características útiles.
+            ¿Por qué usarlo?
+            🚫 Evita instalar 14 programas diferentes (que además podrían estar llenos de malware).
+            ✨ Con SPEED, haces magia en tu equipo con solo unos clics.
+            🎬 Desde la versión 2.0, incluye un reproductor de video y audio integrado con una interfaz moderna, colorida y súper práctica. Así puedes ver tus películas favoritas sin necesidad de abrir toda la app.
+            </p>
+            <p class="PpP" >
+            Requisitos para usar SPEED
+            ✅ Mínimos recomendados:
+            Procesador: Dual Core de 2GHz.
+            RAM: 2GB.
+            Espacio en disco: 300MB.
+            Sistema operativo: Windows 10.
+            ⚠️ ¿Sabías que...?
+            ¡Incluso se ha probado en un Pentium 4 con 1GHz y 2GB de RAM! Funciona... aunque con algún mareo ocasional. Pero estamos en 2025, ¿verdad? 😉
+            </p>
+          </div>
+          <img class="INss" src="./recursos/instal.png">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <style>
+    .PpP {
+      color: black;
+      width: 520px;
+      white-space: pre-line;
+
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #6bd1ff;
+      background: rgb(153 153 153 / 34%);
+      padding: 25px;
+    }
+    .EXplicacion {
+      display: flex;
+      flex-direction: row;
+      gap: 90px;
+      margin-top: 80px;
+      align-items: center;
+    }
+    .mision-sp {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
 
   <section class="el_vacio2">
       <h1> </h1>
   </section>
 
+  <div class="LUNAs"></div>
   <div class="aparece">
     <section class="contenido">
       <h2 class="subtitulo">👌 Reproduce todos tus archivos de audio y video en un solo lugar.</h2>
@@ -128,15 +191,19 @@
       <h1> </h1>
   </section>
 
+  <div class="matar_nubes"></div><!-- Aqui mato las nubes -->
+  <div class="LUNAs"></div>
   <div class="aparece">
-    <section class="contenido">
-      <h2 class="subtitulo">🔐 La Protección esta de tu lado a modo SPEED 🔑</h2>
-      <h2 class="subtitulo2">🌀 Ten el control de tus datos!, configura una contraseña!</h2>
-      <div class="imagen-box2">
-        <img src="./recursos/captura5(contrasena).png" alt="Captura de la app">
-        <img src="./recursos/captura5(ejemplo) (1).png" alt="Captura de la app">
-      </div>
-    </section>
+    <div class="amanecer">
+      <section class="contenido">
+        <h2 class="subtitulo_negat">🔐 La Protección esta de tu lado a modo SPEED 🔑</h2>
+        <h2 class="subtitulo2_negat">🌀 Ten el control de tus datos!, configura una contraseña!</h2>
+        <div class="imagen-box2">
+          <img src="./recursos/captura5(contrasena).png" alt="Captura de la app">
+          <img src="./recursos/captura5(ejemplo) (1).png" alt="Captura de la app">
+        </div>
+      </section>
+    </div>
   </div>
 
   <section class="el_vacio2">
@@ -185,7 +252,64 @@
     </div>
   </div>
 
+  
+  <div class="aparece">
+    <div class="Contenedor-historia">
+      <div class="aparece-terminacion1"></div>
+      <div class="amanecer">
+  
+        <h2 class="subtitulo_negat">😎 Descubre como a hido Evolucionando SPEED 🔥</h2>
+  
+        
+          <div class="historia">
+    
+            <div class="container-historia">
+              <h2 class="subtitulo2_negat">Versión: 0.8</h2>
+              <img class="imagen-boxH" src="./recursos/CAPTURAS-HISTORIA/2025-03-26_221545.png">
+              <h2 class="subtitulo2_negat">Fecha de Salida: 12/ Febrero /2025</h2>
+            </div>
+    
+            <div class="container-historia">
+              <h2 class="subtitulo2_negat">Versión: 1.0</h2>
+              <img class="imagen-boxH" src="./recursos/CAPTURAS-HISTORIA/2025-03-29_182454.png">
+              <h2 class="subtitulo2_negat">Fecha de Salida: 8/ Marzo /2025</h2>
+            </div>
+    
+            <div class="container-historia">
+              <h2 class="subtitulo2_negat">Versión: 1.4</h2>
+              <img class="imagen-boxH" src="./recursos/CAPTURAS-HISTORIA/af21545.png">
+              <h2 class="subtitulo2_negat">Fecha de Salida: 25/ Abril /2025</h2>
+            </div>
+
+            <div class="container-historia">
+              <h2 class="subtitulo2_negat">Versión: 1.8</h2>
+              <img class="imagen-boxH" src="./recursos/CAPTURAS-HISTORIA/2025-05-22_004127.png">
+              <h2 class="subtitulo2_negat">Fecha de Salida: 22/ Mayo /2025</h2>
+            </div>
+
+            <div class="container-historia">
+              <h2 class="subtitulo2_negat">Versión: 1.9</h2>
+              <img class="imagen-boxH" src="./recursos/CAPTURAS-HISTORIA/agsgjulio3-25o.png">
+              <h2 class="subtitulo2_negat">Fecha de Salida: 1/ julio /2025</h2>
+            </div>
+    
+          </div>
+
+      </div>
+      
+    </div>
+  </div>
+
+
+
+  <div class="atardecer"><!-- Aqui Comienza atardecer -->
+    
+    <section class="el_vacio2">
+        <h1> </h1>
+    </section>
+  
     <div class="aparece">
+      
       <section class="contenido">
         <div class="descarga-container"> <!-- Contenedor responsive -->
           <div class="descarga-modal" id="btn-ultima-version">
@@ -194,7 +318,7 @@
               <div class="enunciado"> No tiene soporte para Win7, pero funciona para x86 y 64bit</div>
               
               <button class="btn-version">
-                <img src="./recursos/Down.ico" class="icoDown">
+                <img src="./recursos/iconitos/downloads.png" class="icoDown">
                 Pulsa Aqui Descargar sin anuncios y gratis!
                 
               </button>
@@ -202,7 +326,150 @@
           </div>
         </div>
       </section>
-  </div>
+    </div>
+  
+  
+    <div class="bottom-player">
+    <div class="progress-water" id="progress-water"></div>
+      <div class="player-controls">
+          <button class="control-btn" id="previous" title="Anterior">
+              <img src="./recursos/player/ant.png" alt="Anterior" class="control-icon">
+          </button>
+          <button class="control-btn play-pause" id="play-pause" title="Play/Pausa">
+              <img src="./recursos/player/play.png" alt="Play/Pause" class="control-icon" id="play-pause-icon">
+          </button>
+          <button class="control-btn" id="mute" title="Silenciar">
+              <img src="./recursos/player/M.png" alt="Silenciar" class="control-icon" id="mute-icon">
+          </button>
+          <button class="control-btn" id="next" title="Siguiente">
+              <img src="./recursos/player/cont.png" alt="Siguiente" class="control-icon">
+          </button>
+          <button class="control-btn2-5" id="add-music" title="Agregar música">
+              <img src="./recursos/player/sumar.png" alt="Agregar música" class="control-icon">
+          </button>
+          <button class="control-btn2" id="toggle-fixed" title="Fijar reproductor">
+              <img src="./recursos/player/pin.png" alt="Fijar reproductor" class="control-icon">
+          </button>
+          <button class="control-btn2" id="show-playlist" title="Mostrar lista">
+              <img src="./recursos/player/list.png" alt="Lista de reproducción" class="control-icon">
+          </button>
+          <div class="volume-slider-container">
+              <input type="range" id="volume" min="0" max="100" step="1" value="70" title="Volumen">
+          </div>
+          
+          <div class="progress-info">
+              <div class="time-info">
+                  <span id="current-time">0:00 -</span>
+                  <span id="duration">0:00</span>
+              </div>
+              <div class="progress-bar">
+                  <div class="progress" id="progress"></div>
+              </div>
+          </div>
+  
+          <div class="track-info">
+              <div class="title-container">
+                  <h3 id="track-title">EMPEZEMOS CON ROCK!!🎵</h3>
+                  <p id="track-artist">HAZ SONAR ESOS PARLANTES 🔊</p>
+              </div>
+          </div>  
+      </div>
+    </div>
+  
+    <div class="flooter">
+        <div class="cabeza-titulo">
+          <h2>🎉 ¡Ayuda a crecer SPEED! 🎉</h2>
+          <p>¿Te gustó la página? ¡Compártela con tus amigos!</p>
+        </div>
+      <div class="contenido-flooter">
+
+        <div class="Compartidera">
+          <a class="AaA" href="https://wa.me/?text=Mira%20SPEED%20Multimedia%20%C2%A1La%20mejor%20app%20de%20audio%20y%20video%20👇%20https://tudominio.com" target="_blank">
+            <img class="icon-red" src="./recursos/whasapp-icono.png" alt="WhatsApp"> Comparte la Pagina por WhatsApp
+          </a>
+          <a class="AaA" href="https://t.me/share/url?url=https://tudominio.com&text=Descarga%20SPEED%20Multimedia" target="_blank"> 
+            <img class="icon-red" src="./recursos/telegram-icono.png" alt="Telegram">Comparte la Pagina por Telegram
+          </a>
+          <a class="AaA" href="mailto:?subject=SPEED%20Multimedia&body=Descarga%20aquí:%20https://tudominio.com" target="_blank">
+            <img class="icon-red" src="./recursos/correo-icono.png" alt="Correo"> Comparte la Pagina por Correo Electronico
+          </a>
+        </div>
+
+        <div class="Redes-flooter">
+
+          <h3>📢 Únete a nuestro canal</h3>
+          <a class="AaA" href="https://t.me/speedoffcelL" target="_blank">
+            <img class="icon-red" src="./recursos/telegram-icono.png" alt="Unirse a Telegram">
+            Para Unirse, Preguntar, interactuar en Telegram (Preciona aqui)
+          </a>
+
+          <h3>💖 ¿Quieres apoyar el proyecto?</h3>
+          <button  id="modal-donacion" class="btn-donar">DONAR</button>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- Aqui termina atardecer -->
+  <div class="now-ABRAHAM"><span id="marquee-text">Todos los derechos reservados para Piñirí, Gracias a Dios por ayudarme y por tanto como esta WEB y el software fue Desarrollado por Abraham de Jesús Piñirí Megret (2025) Gracias por usar gratuitamente este producto, por ende se prohibe su venta.</span></div>
+  <style>
+   .icon-red {
+    width: 30px;
+    height: 30px;
+   }
+   .now-ABRAHAM {
+    height: 32px;
+    width: 100%;
+    display: flex   ;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+    background: #0d0b16;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+   }
+   #marquee-text {
+    display: inline-block;
+    padding-left: 110%;
+    animation: scroll-title 50s linear infinite;
+   }
+   @keyframes scroll-title {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+   }
+   .Redes-flooter {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+   }
+   .AaA {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-family: system-ui;
+    transition: all 0.4s ease;
+   }
+   .AaA:hover {
+    color: red;
+    background: #cd9af97a;
+    border-radius: 15px;
+   }
+   .btn-donar {
+    transition: all 0.4s ease;
+   }
+   .btn-donar:hover {
+    background: red;
+   }
+  </style>
 
   <!-- Modal Donaciones -->
   <div id="donacion-modal" class="modal">
@@ -268,53 +535,6 @@
       </div>
     </div>
   </div>
-
-  <div class="bottom-player">
-    <div class="progress-water" id="progress-water"></div>
-      <div class="player-controls">
-          <button class="control-btn" id="previous" title="Anterior">
-              <img src="./recursos/player/ant.png" alt="Anterior" class="control-icon">
-          </button>
-          <button class="control-btn play-pause" id="play-pause" title="Play/Pausa">
-              <img src="./recursos/player/play.png" alt="Play/Pause" class="control-icon" id="play-pause-icon">
-          </button>
-          <button class="control-btn" id="mute" title="Silenciar">
-              <img src="./recursos/player/M.png" alt="Silenciar" class="control-icon" id="mute-icon">
-          </button>
-          <button class="control-btn" id="next" title="Siguiente">
-              <img src="./recursos/player/cont.png" alt="Siguiente" class="control-icon">
-          </button>
-          <button class="control-btn2" id="add-music" title="Agregar música">
-              <img src="./recursos/player/sumar.png" alt="Agregar música" class="control-icon">
-          </button>
-          <button class="control-btn2" id="toggle-fixed" title="Fijar reproductor">
-              <img src="./recursos/player/pin.png" alt="Fijar reproductor" class="control-icon">
-          </button>
-          <button class="control-btn2" id="show-playlist" title="Mostrar lista">
-              <img src="./recursos/player/list.png" alt="Lista de reproducción" class="control-icon">
-          </button>
-          <div class="volume-slider-container">
-              <input type="range" id="volume" min="0" max="100" step="1" value="70" title="Volumen">
-          </div>
-          
-          <div class="progress-info">
-              <div class="time-info">
-                  <span id="current-time">0:00 -</span>
-                  <span id="duration">0:00</span>
-              </div>
-              <div class="progress-bar">
-                  <div class="progress" id="progress"></div>
-              </div>
-          </div>
-  
-          <div class="track-info">
-              <div class="title-container">
-                  <h3 id="track-title">EMPEZEMOS CON ROCK!!🎵</h3>
-                  <p id="track-artist">HAZ SONAR ESOS PARLANTES 🔊</p>
-              </div>
-          </div>  
-      </div>
-  </div>
   
   <!-- Modal de lista de reproducción -->
   <div id="playlist-modal" class="playlist-modal">
@@ -341,6 +561,7 @@
   <script src="./JS/logica.js"></script>
   <!-- Confeti mágico -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="./JS/logica-scroll.js"></script>
+  <script src="./js/logica-scroll.js"></script>
+  <script src="./Dominios/logica-subWeb.js"></script>
 </body>
 </html>
