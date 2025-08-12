@@ -87,15 +87,6 @@ h1 {
   z-index: 9999;
 }
 
-.modal-contenido {
-  background: #1e1e1e;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 500px;
-  width: 90%;
-}
-
 .loader {
   border: 5px solid #007bff;
   border-radius: 50%;
@@ -263,13 +254,16 @@ p.soporte:hover {
 }
 
 .modal-contenido {
-  background: #1a1a1a;
-  padding: 30px;
-  border-radius: 12px;
-  color: white;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 0 20px #00f0ff;
+  height: 97%;
+    background: linear-gradient(135deg, #5f00ff, #007bff);
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.7);
+    position: relative;
+    color: white;
 }
 
 .cerrar-modal {

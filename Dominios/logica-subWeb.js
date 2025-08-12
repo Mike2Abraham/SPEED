@@ -1,6 +1,7 @@
 const navbar = document.querySelector('.navbar');
 const cartelon = document.getElementById('cartelon');
 const animados = document.querySelectorAll('.aparece');
+const animadosV2 = document.querySelectorAll('.apareceV2');
 
 let lastScrollY = window.scrollY;
 
@@ -56,15 +57,29 @@ function animarContenidoVisible() {
   });
 }
 
+function animarContenidoVisibleV2() {
+  const trigger = window.innerHeight * 0.85;
+
+  animadosV2.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < trigger) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+}
 // Eventos
 window.addEventListener('scroll', () => {
   ajustarNavbar();
   animarContenidoVisible();
+  animarContenidoVisibleV2();
 });
 
 window.addEventListener('load', () => {
   ajustarNavbar();
   animarContenidoVisible();
+  animarContenidoVisibleV2();
 });
 
 
