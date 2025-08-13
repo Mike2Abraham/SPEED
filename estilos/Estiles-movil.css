@@ -272,16 +272,26 @@
   }
 
   .download-btn2 {
-    right: 97px;
+    right: 54px;
     width: 33px;
     height: 28px !important;
   }
   .download-btn2-img {
     width: 30px !important;
   }
+  .player-controls {
+  display: flex !important ;
+  align-items: center  !important;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+  }
   .modal-tab {
     left: -13px !important;
     top: 13% !important;
     transform: scale(0.9) !important;
+  }
+  .LUNAs {
+    display: none !important;
   }
 }

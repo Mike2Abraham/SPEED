@@ -356,8 +356,7 @@
   .control-btn {
     width: 32px !important;
     height: 32px !important;
-    min-width: 32px !important;
-    padding: 6px !important;
+    min-width: 18px !important;
   }
 
   /*  Barra de progreso */
