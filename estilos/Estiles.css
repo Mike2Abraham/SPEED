@@ -1357,110 +1357,30 @@ button#btn-ultima-version {
 }
 
 
-/* 📁 estilos-animaciones.css (o añádelo a tu CSS existente) */
-/* Añade esto a tu hoja de estilos */
+:root {
+  --viento: 0px;
+}
+
 .LUNAs {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  overflow: hidden; /* Recorta las gotas que salgan del contenedor */
+  overflow: hidden;
+  z-index: 999999999999999999999999;
+  pointer-events: none; /* que no interfiera con clics */
 }
 
 .gota {
   position: absolute;
+  top: -10px;
   width: 1px;
-  height: 20px;
-  background: linear-gradient(to bottom, 
-    transparent, 
-    rgba(173, 216, 230, 0.8) 70%, 
-    transparent 100%
-  );
-  animation: caer 2s linear forwards; /* 'forwards' mantiene el estado final */
+  height: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  animation: caer linear forwards;
 }
 
 @keyframes caer {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-}
-
-/* Contenedores */
-.nubesL, .nubesR {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9998; /* Por debajo de la lluvia (z-index: 9999) */
-  overflow: hidden;
-}
-
-/* Nubes comunes */
-.nube {
-  position: absolute;
-  opacity: 0.7;
-  transition: opacity 1.5s ease-out; 
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-/* Nubes izquierda a derecha */
-.nubesL .nube {
-  left: -200px; /* Inicio fuera de pantalla */
-  animation-name: moverLtoR;
-}
-
-/* Nubes derecha a izquierda */
-.nubesR .nube {
-  right: -200px; /* Inicio fuera de pantalla */
-  animation-name: moverRtoL;
-}
-
-/* Animaciones */
-@keyframes moverLtoR {
   to {
-    transform: translateX(calc(100vw + 200px));
+    transform: translate(var(--viento), 100vh);
   }
 }
-
-@keyframes moverRtoL {
-  to {
-    transform: translateX(calc(-100vw - 200px));
-  }
-}
-
-
-.boton-de-nubes {
-    width: 50px;
-    height: 50px;
-    transition: all 0.6s ease;
-}
-
-.btn-destructor {
-  width: 46px;
-  height: 46px;
-  bottom: 10px;
-  border: none;
-  background: none;
-  left: 9px;
-  position: fixed;
-  z-index: 99999999999999999999999999999999;
-}
-
-.boton-de-nubes:hover {
-  transform: scale(1.1);
-}
-
-/*<img src="./recursos/iconitos/dado.png">*/

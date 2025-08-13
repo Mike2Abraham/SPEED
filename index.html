@@ -19,7 +19,6 @@
 </head>
 <body>
   <!--Header-->
-  <button id="btn-matar-nubes" alt="Matar Nubes Tiernas" class="btn-destructor"><img class="boton-de-nubes" src="./recursos/iconitos/matar-nube.png"></button>
   <header class="navbar">
     <div class="logo">
       <img src="./recursos/iconob.png" class="logotipo">
@@ -74,13 +73,13 @@
   </nav>
 
   <button class="to-top-btn hidden" aria-label="Subir al inicio">↑</button>
-
+  <div class="LUNAs"></div>
   <section class="el_vacio">
       <h1> </h1>
   </section>
 
-  
-  <div class="LUNAs"></div>
+
+
   <div class="aparece">
     <section class="contenido">
       <h2 class="subtitulo">Empezemos por aqui!</h2>
@@ -91,9 +90,6 @@
     </section>
   </div>
 
-
-  <div class="nubesL"></div> <!-- Nubes de izquierda a derecha -->
-  <div class="nubesR"></div> <!-- Nubes de derecha a izquierda -->
   <div class="aparece">
     <div class="Contenedor-historia">
       <div class="amanecer">
@@ -156,7 +152,7 @@
       <h1> </h1>
   </section>
 
-  <div class="LUNAs"></div>
+
   <div class="aparece">
     <section class="contenido">
       <h2 class="subtitulo">👌 Reproduce todos tus archivos de audio y video en un solo lugar.</h2>
@@ -193,8 +189,6 @@
       <h1> </h1>
   </section>
 
-  <div class="matar_nubes"></div><!-- Aqui mato las nubes -->
-  <div class="LUNAs"></div>
   <div class="aparece">
     <div class="amanecer">
       <section class="contenido">
@@ -557,15 +551,13 @@
   
   <input type="file" id="file-input" accept="audio/*" multiple style="display: none;">
 
-  <script type="module" src="./js/logica-scroll.mjs"></script>
-  <script src="./js/logica-scroll.js"></script>
+  <script src="./JS/logica.js"></script>
+  <!--<script src="./js/logica-scroll.js"></script>-->
   <script src="./JS/contador-descargas.js"></script>
   <script src="./JS/logica-player.js"></script>
   <!--<script src="./JS/logica-particulas.js"></script>-->
-  <script src="./JS/logica.js"></script>
   <!-- Confeti mágico -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="./Dominios/logica-subWeb.js"></script>
 </body>
 </html>
-

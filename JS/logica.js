@@ -101,183 +101,283 @@ function initModals() {
   }
 }
 
+
 // 📁 JS/efectoLuna.js
 // 📁 JS/efectoLuna.js
 document.addEventListener('DOMContentLoaded', () => {
-  const contenedorLunas = document.querySelector('.LUNAs');
-  if (!contenedorLunas) return;
+  const contenedor = document.querySelector('.LUNAs');
+  if (!contenedor) return;
 
   let lluviaActiva = false;
-  let gotas = [];
-  let intervalo;
+  let intervaloGotas;
+  let ciclo;
+  
+  // Dirección del viento
+  let vientoActual = 0;    // desplazamiento lateral en px
+  let vientoObjetivo = 0;  // hacia dónde se mueve
+  const suavizado = 0.05;  // cuanto más pequeño, más suave
 
-  // Función para crear una gota
+  // Crear gota
   function crearGota() {
     const gota = document.createElement('div');
-    gota.classList.add('gota');
+    gota.className = 'gota';
     gota.style.left = `${Math.random() * 100}vw`;
-    gota.style.animationDuration = `${1 + Math.random() * 2}s`;
-    contenedorLunas.appendChild(gota);
-    
-    // Eliminar la gota después de que termine su animación
-    gota.addEventListener('animationend', () => {
-      gota.remove();
-    });
+    gota.style.setProperty('--viento', vientoActual + 'px');
+    gota.style.animationDuration = (0.6 + Math.random() * 0.4) + 's'; // rápido como lluvia
+    contenedor.appendChild(gota);
 
-    gotas.push(gota);
-    return gota;
+    gota.addEventListener('animationend', () => gota.remove());
   }
 
   // Activar lluvia
   function activarLluvia() {
     if (lluviaActiva) return;
     lluviaActiva = true;
-    
-    intervalo = setInterval(() => {
-      if (gotas.length < 50) { // Máximo 50 gotas simultáneas
-        crearGota();
-      }
-    }, 100); // Nueva gota cada 100ms
+    intervaloGotas = setInterval(() => {
+      if (contenedor.childElementCount < 80) crearGota();
+    }, 40); // más frecuencia = más densidad
   }
 
   // Detener lluvia
   function detenerLluvia() {
     if (!lluviaActiva) return;
-    clearInterval(intervalo);
+    clearInterval(intervaloGotas);
     lluviaActiva = false;
-    
-    // Forzar eliminación de todas las gotas
-    gotas.forEach(gota => {
-      if (gota.parentNode) {
-        gota.style.animation = 'none'; // Detiene la animación
-        gota.remove();
-      }
-    });
-    gotas = [];
+    contenedor.innerHTML = ''; // limpiar gotas
   }
 
-  // Control por scroll
-  window.addEventListener('scroll', () => {
-    const seccionLluvia = document.querySelector('.aparece'); // Ajusta según tu estructura
-    if (!seccionLluvia) return;
+  // Ciclo 10s ON / 10s OFF
+  function iniciarCiclo() {
+    activarLluvia();
+    ciclo = setInterval(() => {
+      if (lluviaActiva) detenerLluvia();
+      else activarLluvia();
+    }, 80000);
+  }
 
-    const rect = seccionLluvia.getBoundingClientRect();
-    const enSeccion = rect.top <= window.innerHeight && rect.bottom >= 0;
+  // Actualizar viento suavemente
+  function animarViento() {
+    vientoActual += (vientoObjetivo - vientoActual) * suavizado;
+    document.documentElement.style.setProperty('--viento', vientoActual.toFixed(2) + 'px');
+    requestAnimationFrame(animarViento);
+  }
+  animarViento();
 
-    if (enSeccion && !lluviaActiva) {
-      activarLluvia();
-    } else if (!enSeccion && lluviaActiva) {
-      detenerLluvia();
+  // Control PC: dirección con el cursor
+  window.addEventListener('mousemove', e => {
+    const centroX = window.innerWidth / 2;
+    const deltaX = e.clientX - centroX;
+    vientoObjetivo = (deltaX / centroX) * 200; // máx ±200px de desplazamiento lateral
+  });
+
+  // Control móvil: dirección con sensor
+  window.addEventListener('deviceorientation', e => {
+    if (e.gamma !== null) {
+      vientoObjetivo = (e.gamma / 45) * 200;
     }
   });
+
+  // Iniciar ciclo
+  iniciarCiclo();
 });
 
-// 📁 JS/efectoNubes.js
-document.addEventListener('DOMContentLoaded', () => {
-  const nubesL = document.querySelector('.nubesL');
-  const nubesR = document.querySelector('.nubesR');
-  const matarNubesDiv = document.querySelector('.matar_nubes'); // Nuevo div "asesino"
-  const tiposNube = ['nube1.png', 'nube2.png', 'nube3.png'];
-  let nubesActivas = false;
-  let intervaloNubes;
 
-  // Crear una nube (con opción de desvanecimiento)
-  function crearNube(contenedor, direccion) {
-    const nube = document.createElement('img');
-    const tipo = tiposNube[Math.floor(Math.random() * tiposNube.length)];
-    nube.src = `./recursos/iconitos/${tipo}`;
-    nube.classList.add('nube');
 
-    // Estilos aleatorios (como antes)
-    const tamaño = 80 + Math.random() * 120;
-    nube.style.width = `${tamaño}px`;
-    nube.style.top = `${10 + Math.random() * 60}%`;
-    const duracion = 20 + Math.random() * 40;
-    nube.style.animationDuration = `${duracion}s`;
 
-    contenedor.appendChild(nube);
 
-    // Eliminar al terminar animación (original)
-    nube.addEventListener('animationend', () => {
-      nube.remove();
-    });
 
-    return nube; // Devolvemos la nube para control externo
+
+
+
+
+
+
+
+
+
+
+
+
+
+// lOGICA-SCROLL
+const navbar = document.querySelector('.navbar');
+const cartelon = document.getElementById('cartelon');
+const animados = document.querySelectorAll('.aparece');
+
+let lastScrollY = window.scrollY;
+
+// CONFIGURACIÓN
+const maxHeight = 590; // Altura máxima del header
+const minHeight = 70;  // Altura mínima contraído
+const limiteContraccion = 300; // scrollY hasta dónde se contrae
+
+function ajustarNavbar() {
+  const scrollY = window.scrollY;
+
+  // Cálculo progresivo de altura
+  let nuevaAltura = maxHeight - (scrollY * ((maxHeight - minHeight) / limiteContraccion));
+  nuevaAltura = Math.max(minHeight, Math.min(maxHeight, nuevaAltura));
+  navbar.style.height = `${nuevaAltura}px`;
+
+  // Mostrar u ocultar cartelón (solo si header está expandido)
+  if (scrollY > 150 && cartelon) {
+    cartelon.classList.add('oculto');
+  } else if (scrollY < 100 && cartelon) {
+    cartelon.classList.remove('oculto');
   }
 
-  // Activar nubes (igual que antes)
-  function activarNubes() {
-    if (nubesActivas) return;
-    nubesActivas = true;
-
-    intervaloNubes = setInterval(() => {
-      const cantidad = Math.floor(1 + Math.random() * 3);
-      for (let i = 0; i < cantidad; i++) {
-        crearNube(nubesL, 'LtoR');
-        crearNube(nubesR, 'RtoL');
-      }
-    }, 2000);
+  // Mostrar/ocultar menú según el estado
+  if (nuevaAltura <= minHeight + 10) {
+    navbar.classList.add('contraido');
+  } else {
+    navbar.classList.remove('contraido');
   }
 
-  // ----- NUEVO: Sistema de "matar nubes" -----
-  if (matarNubesDiv) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Desvanecer todas las nubes suavemente
-          document.querySelectorAll('.nube').forEach(nube => {
-            nube.style.opacity = '0'; // Inicia transición CSS
-            setTimeout(() => nube.remove(), 1500); // Elimina después de 1.5s
-          });
-        }
-      });
-    }, { threshold: 0.1 });
-
-    observer.observe(matarNubesDiv);
-  }
-
-  // Control por scroll original (sin cambios)
-  window.addEventListener('scroll', () => {
-    const seccionNubes = document.querySelector('.aparece');
-    if (!seccionNubes) return;
-
-    const rect = seccionNubes.getBoundingClientRect();
-    const enSeccion = rect.top <= window.innerHeight && rect.bottom >= 0;
-
-    if (enSeccion && !nubesActivas) {
-      activarNubes();
-    } else if (!enSeccion && nubesActivas) {
-      // ¡No detenemos las nubes aquí! Solo al pasar por .matar_nubes
+  if (navbar) {
+    navbar.style.height = `${nuevaAltura}px`;
+  
+    // Mostrar logo y título solo si el header está contraído
+    if (nuevaAltura <= minHeight + 10) {
+      navbar.classList.add('contraido');
+    } else {
+      navbar.classList.remove('contraido');
     }
-  });
-});
-
-// Función para destruir todas las nubes y detener el sistema
-function destruirNubes() {
-  // 1. Detener la generación de nuevas nubes
-  clearInterval(intervaloNubes);
-  nubesActivas = false;
-  setTimeout(() => nube.remove(), 500);
-  // 2. Eliminar todas las nubes existentes con transición
-  document.querySelectorAll('.nube').forEach(nube => {
-    nube.style.opacity = '0';
-    setTimeout(() => nube.remove(), 500); // Elimina después de 0.5s
-  });
-
-  // 3. Deshabilitar el botón (opcional)
-  const btn = document.getElementById('btn-matar-nubes');
-  if (btn) {
-    btn.textContent = '☠️ Nubes Eliminadas';
-    btn.style.background = '#666';
-    btn.disabled = true;
   }
-
 }
 
-// Asignar evento al botón
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('btn-matar-nubes');
-  if (btn) {
-    btn.addEventListener('click', destruirNubes);
-  }
+// Modal de "Desliza hacia abajo"
+const hintModal = document.querySelector('.hint-modal');
+
+// Mostrar solo si es la primera visita o recarga
+if (!sessionStorage.getItem('hintShown')) {
+  // Ocultar al hacer scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      hintModal.classList.add('hidden');
+      sessionStorage.setItem('hintShown', 'true');
+    }
+  });
+} else {
+  hintModal.classList.add('hidden');
+}
+
+function animarContenidoVisible() {
+  const trigger = window.innerHeight * 0.85;
+
+  animados.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < trigger) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+}
+
+// Eventos
+window.addEventListener('scroll', () => {
+  ajustarNavbar();
+  animarContenidoVisible();
 });
+
+window.addEventListener('load', () => {
+  ajustarNavbar();
+  animarContenidoVisible();
+});
+
+
+//js para el cursor de luz
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  const cursorLight = document.querySelector('.cursor-light');
+  
+  if (!navbar || !cursorLight) return;
+
+  // Configuración inicial
+  let isInsideNavbar = false;
+
+  // Mueve la luz con el cursor
+  document.addEventListener('mousemove', (e) => {
+    const rect = navbar.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Verifica si el cursor está dentro del header
+    const isInside = (
+      x >= 0 && x <= rect.width &&
+      y >= 0 && y <= rect.height
+    );
+
+    if (isInside) {
+      cursorLight.style.opacity = '1';
+      cursorLight.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      isInsideNavbar = true;
+    } else if (isInsideNavbar) {
+      cursorLight.style.opacity = '0';
+      isInsideNavbar = false;
+    }
+  });
+
+  
+
+  // Opcional: Suavizar entrada/salida
+  navbar.addEventListener('mouseenter', () => {
+    cursorLight.style.transition = 'opacity 0.3s ease';
+  });
+});
+
+//logica para el boton de subida usando Sempou!
+const toTopBtn = document.querySelector('.to-top-btn');
+
+function toggleToTopButton() {
+  const scrollHeight = document.documentElement.scrollHeight;
+  const scrollPosition = window.innerHeight + window.scrollY;
+  
+  if (scrollPosition >= scrollHeight - 100) {
+    toTopBtn.classList.remove('hidden');
+  } else {
+    toTopBtn.classList.add('hidden');
+  }
+}
+
+toTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+window.addEventListener('scroll', toggleToTopButton);
+window.addEventListener('resize', toggleToTopButton); // Para responsiveness
+
+// Función para alternar el menú (solo en móvil)
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  if (window.innerWidth <= 768) { // Solo si es móvil
+    menu.classList.toggle('active');
+  }
+}
+
+// Abrir/cerrar menú móvil
+// Menú móvil
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+const closeBtn = document.querySelector('.close-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+const overlay = document.querySelector('.mobile-menu-overlay');
+
+if(hamburgerBtn && mobileMenu) {
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Bloquear scroll
+  });
+
+  closeBtn.addEventListener('click', closeMobileMenu);
+  overlay.addEventListener('click', closeMobileMenu);
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('active');
+    overlay.style.display = 'none';
+    document.body.style.overflow = ''; // Restaurar scroll
+  }
+}
