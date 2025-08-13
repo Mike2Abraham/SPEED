@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (isFixed) {
             player.classList.add('fixed');
-            toggleFixedBtn.querySelector('img').src = './js/pin.png';
+            toggleFixedBtn.querySelector('img').src = './JS/pin.png';
         }
         
         // Resetear la UI
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             audio.play().catch(e => {
                 console.error("Error al reproducir:", e);
                 isPlaying = false;
-                playPauseIcon.src = './js/play.png';
+                playPauseIcon.src = './JS/play.png';
             });
         }
     }
@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (isPlaying) {
             audio.pause();
-            playPauseIcon.src = './js/play.png';
+            playPauseIcon.src = './JS/play.png';
         } else {
             audio.play();
-            playPauseIcon.src = './js/pause.png';
+            playPauseIcon.src = './JS/pause.png';
         }
         isPlaying = !isPlaying;
     }
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMute() {
         isMuted = !isMuted;
         audio.muted = isMuted;
-        muteIcon.src = isMuted ? './js/m-muted.png' : './js/M.png';
+        muteIcon.src = isMuted ? './JS/m-muted.png' : './JS/M.png';
     }
 
     // Actualizar tiempo de reproducción
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('playerFixed', isFixed);
         
         // Cambiar icono
-        toggleFixedBtn.querySelector('img').src = isFixed ? './js/pin.png' : './js/pin.png';
+        toggleFixedBtn.querySelector('img').src = isFixed ? './JS/pin.png' : './JS/pin.png';
     }
 
     // Mostrar/ocultar lista de reproducción
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
         progressBar.style.width = '0%';
         document.getElementById('progress-water').style.width = '0%';
         isPlaying = false;
-        playPauseIcon.src = './js/play.png';
+        playPauseIcon.src = './JS/play.png';
     }
 
     // Actualizar la UI de la lista de reproducción
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
             progressBar.style.width = '0%';
             document.getElementById('progress-water').style.width = '0%';
             isPlaying = false;
-            playPauseIcon.src = './js/play.png';
+            playPauseIcon.src = './JS/play.png';
         } else {
             loadTrack(currentTrackIndex);
         }
