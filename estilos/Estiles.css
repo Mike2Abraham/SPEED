@@ -1384,3 +1384,158 @@ button#btn-ultima-version {
     transform: translate(var(--viento), 100vh);
   }
 }
+
+
+/* Modal completo */
+.modal-explisito {
+    position: fixed;
+    top: 15%;
+    left: 0;
+    width: 380px;
+    height: 360px;
+    /* transform: translate(-50%, -50%); */
+    max-width: 380px;
+    background: rgb(20 20 20 / 36%);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    justify-content:flex-end;
+    transition: all 0.3s ease;
+}
+
+/* Imagen del carrusel */
+.modal-explisito img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 83px;
+  border-radius: 19px;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+/* Botones de navegación */
+.carousel-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.carousel-buttons {
+  border-radius: 6px;
+  position: absolute;
+}
+
+.prev-btn {
+  position: absolute;
+  left: 0;
+  margin-top: 67px;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, rgb(170, 0, 255), rgb(0, 21, 255));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition:all 0.2s ease;
+}
+.next-btn {
+  position: absolute;
+  right: 0;
+  margin-top: 67px;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, rgb(170, 0, 255), rgb(0, 21, 255));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition:all 0.2s ease;
+}
+.next-btn, .prev-btn:hover {
+  background-color: #ff00c8;
+}
+
+/* Botón de descargar */
+.download-btn {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:all 0.4s ease;
+}
+
+.download-btn2 {
+  position: absolute;
+  right: 77px;
+  width: 40px;
+  height: 38px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:all 0.4s ease;
+}
+
+.download-btn2:hover {
+  background: linear-gradient(90deg, rgb(170, 0, 255), rgb(0, 21, 255));
+}
+
+.download-btn2-img {
+  width: 20px;
+}
+
+.fondito-txt {
+    position: fixed;
+    bottom: 60px;
+    background: linear-gradient(359deg, black, #0000001f);
+}
+.explisito-txt {
+    font-size: 12px;
+    text-shadow: 0 0 3px black;
+    z-index: 2;
+}
+
+.download-btn:hover {
+  background: linear-gradient(90deg, rgb(170, 0, 255), rgb(0, 21, 255));
+}
+
+/* Botón cerrar */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Lengüeta visible cuando modal cerrado */
+.modal-tab {
+  position: fixed;
+  left: 0;
+  top: 37%;
+  /* transform: translateY(-50%); */
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  width: 165px;
+  height: 38px;
+}
+   
+

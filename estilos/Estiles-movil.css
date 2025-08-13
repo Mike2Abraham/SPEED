@@ -256,3 +256,32 @@
     transform: rotate(270deg) !important;
   }
 }
+
+/* Responsivo móvil */
+@media (max-width: 880px) {
+  .modal-explisito {
+    width: 95%;
+    padding: 15px;
+  }
+  .carousel-buttons button, .download-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .modal-explisito img {
+    max-height: 200px;
+  }
+
+  .download-btn2 {
+    right: 97px;
+    width: 33px;
+    height: 28px !important;
+  }
+  .download-btn2-img {
+    width: 30px !important;
+  }
+  .modal-tab {
+    left: -13px !important;
+    top: 13% !important;
+    transform: scale(0.9) !important;
+  }
+}

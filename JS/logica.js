@@ -381,3 +381,83 @@ if(hamburgerBtn && mobileMenu) {
     document.body.style.overflow = ''; // Restaurar scroll
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    const container = document.querySelector('.explisito');
+
+    // Arrays de capturas
+    const tiposCaptura = ['captura1.png', 'captura2.png', 'captura3.png', 'captura5.png', 'captura6.png', 'captura7.png', 'captura8.png', 'captura9.png'];
+
+    // Crear modal
+    const modal = document.createElement('div');
+    modal.className = 'modal-explisito';
+    modal.innerHTML = `
+      <button class="close-modal" styles="font-size: 40px; margin-top: -10px;">&times;</button>
+      <div class="carousel-buttons">
+      <button class="prev-btn">&#8592; Prev</button>
+        <img src="" alt="captura" class="carousel-image">
+        <div class="fondito-txt">
+          <div class="explisito-txt">Te Precento a SPM en su primera versión! con el para reproducir tus multimedias dirctamente desde Windows (Como un reproductor de audio y Video Normal), Pruebalo no querras despegarte de el!!</div>
+        </div>
+        <button class="next-btn">Next &#8594;</button>
+      </div>
+      <a href="https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPM-subv1.0/Instalador.SPM.1.0.7z" class="download-btn">Descargar Ya</a>
+      <a href="./Dominios/index.html" class="download-btn2"><img class="download-btn2-img" src="./recursos/iconitos/extortar-list.png"></a>
+    `;
+    container.appendChild(modal);
+
+    // Crear lengüeta
+    const tab = document.createElement('div');
+    tab.className = 'modal-tab';
+    tab.textContent = "Descargar SPM";
+    tab.style.backgroundImage = "url('./recursos/iconitos/iconodVideo.png')";
+    tab.style.backgroundSize = 'contain';
+    tab.style.backgroundRepeat = 'no-repeat';
+    tab.style.backgroundPosition = 'center right';
+    document.body.appendChild(tab);
+
+    const carouselImage = modal.querySelector('.carousel-image');
+    let index = 0;
+
+    function actualizarImagen() {
+      carouselImage.style.opacity = 0; // comienza transparente
+      setTimeout(() => {
+        const tipo = tiposCaptura[index];
+        carouselImage.src = `./recursos/iconitos/${tipo}`;
+        carouselImage.style.opacity = 1; // vuelve a visible
+      }, 200); // tiempo corto para dar efecto fade
+    }
+
+    actualizarImagen();
+
+    // Carrusel automático
+    let interval = setInterval(() => {
+      index = (index + 1) % tiposCaptura.length;
+      actualizarImagen();
+    }, 7000); // tiempo de cambio
+
+    // Botones manuales
+    modal.querySelector('.prev-btn').addEventListener('click', () => {
+      index = (index - 1 + tiposCaptura.length) % tiposCaptura.length;
+      actualizarImagen();
+    });
+    modal.querySelector('.next-btn').addEventListener('click', () => {
+      index = (index + 1) % tiposCaptura.length;
+      actualizarImagen();
+    });
+
+    // Botón cerrar
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+      modal.style.display = 'none';
+      tab.style.display = 'block';
+    });
+
+    // Lengüeta abrir
+    tab.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      tab.style.display = 'none';
+    });
+
+  }, 5000); // Espera 5 segundos después de cargar la página
+});
