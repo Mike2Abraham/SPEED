@@ -255,9 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Función para destruir todas las nubes y detener el sistema
 function destruirNubes() {
   // 1. Detener la generación de nuevas nubes
-  //clearInterval(intervaloNubes);
+  clearInterval(intervaloNubes);
   nubesActivas = false;
-  
+  setTimeout(() => nube.remove(), 500);
   // 2. Eliminar todas las nubes existentes con transición
   document.querySelectorAll('.nube').forEach(nube => {
     nube.style.opacity = '0';
@@ -272,7 +272,6 @@ function destruirNubes() {
     btn.disabled = true;
   }
 
-  console.log('Sistema de nubes destruido. Adiós, nubes tiernas. 💀');
 }
 
 // Asignar evento al botón
