@@ -402,7 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <button class="next-btn">Next &#8594;</button>
       </div>
-      <a href="https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPM-subv1.0/Instalador.SPM.1.0.7z" class="download-btn">Descargar Ya</a>
+      <a href="https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPM-subv2.1/SPM-lanzador.Setup.2.0.52.7z" class="download-btn">Descargar Ya</a>
       <a href="./Dominios/index.html" class="download-btn2"><img class="download-btn2-img" src="./recursos/iconitos/extortar-list.png"></a>
     `;
     container.appendChild(modal);
@@ -460,4 +460,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   }, 5000); // Espera 5 segundos después de cargar la página
+
 });
