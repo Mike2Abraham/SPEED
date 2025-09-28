@@ -199,15 +199,15 @@ const modalConfig = {
   fraseCompartir: "No te quedes solo con el botín... ¡Compártelo con tus amistades! 👇",
   enlaces: {
     telegram: {
-      url: "https://t.me/share/url?url=https://tudominio.com",
+      url: "https://t.me/share/url?url=https://speed2-1urw.onrender.com",
       icono: "../recursos/telegram-icono.png"
     },
     whatsapp: {
-      url: "https://wa.me/?text=Mira%20esta%20app%20%C2%A1Super%C3%B3%20https://tudominio.com",
+      url: "https://wa.me/?text=Mira%20esta%20app%20%C2%A1Super%C3%B3%20https://speed2-1urw.onrender.com",
       icono: "../recursos/whasapp-icono.png"
     },
     correo: {
-      url: "mailto:?subject=Te%20comparto%20SPEED%20Multimedia&body=Descarga%20aqu%C3%AD:%20https://tudominio.com",
+      url: "mailto:?subject=Te%20comparto%20SPEED%20Multimedia&body=Descarga%20aqu%C3%AD:%20https://speed2-1urw.onrender.com",
       icono: "../recursos/correo-icono.png"
     }
   }
@@ -493,5 +493,6 @@ window.onload = async () => {
     }, 600); // pequeña pausa para asegurar que las tarjetas ya existen
   }, 5000); // 3 segundos de espera total
 };
+
 
 
