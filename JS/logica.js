@@ -386,6 +386,27 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     const container = document.querySelector('.explisito');
 
+    // Control de visualización: si el usuario ya cerró este modal en las últimas 2 semanas,
+    // no lo mostramos. Guardamos la fecha en localStorage como timestamp (ms).
+    const EXPLISITO_KEY = 'modal_explisito_visto_at';
+    const TWO_WEEKS_MS = 1000 * 60 * 60 * 24 * 14; // 14 días
+    try {
+      const val = localStorage.getItem(EXPLISITO_KEY);
+      if (val) {
+        const ts = parseInt(val, 10);
+        if (!isNaN(ts)) {
+          const age = Date.now() - ts;
+          if (age < TWO_WEEKS_MS) {
+            // No mostrar el modal porque aún no han pasado 2 semanas
+            return;
+          }
+        }
+      }
+    } catch (e) {
+      // Si localStorage no está disponible, continuamos y mostramos el modal (sin guardar)
+      console.warn('localStorage no disponible para modal-explisito:', e);
+    }
+
     // Arrays de capturas
     const tiposCaptura = ['captura1.png', 'captura2.png', 'captura3.png', 'captura5.png', 'captura6.png', 'captura7.png', 'captura8.png', 'captura9.png'];
 
@@ -447,10 +468,15 @@ document.addEventListener("DOMContentLoaded", () => {
       actualizarImagen();
     });
 
-    // Botón cerrar
+    // Botón cerrar: ocultar modal y guardar la fecha de cierre en localStorage
     modal.querySelector('.close-modal').addEventListener('click', () => {
       modal.style.display = 'none';
       tab.style.display = 'block';
+      try {
+        localStorage.setItem(EXPLISITO_KEY, String(Date.now()));
+      } catch (e) {
+        // Silenciar errores de localStorage
+      }
     });
 
     // Lengüeta abrir
