@@ -12,6 +12,7 @@
   <title>Descargas | SPEED Multimedia</title>
   <link rel="stylesheet" href="../estiles-menu-header.css">
   <link rel="stylesheet" href="./estiles-descargas.css">
+  <link rel="stylesheet" href="../estilos/Estiles-modal-parches.css">
     <style>
     /* Estilo para el botón de "no carga" */
     .btn-no-carga {
@@ -83,6 +84,28 @@
     <h1>Descargas para Windows</h1>
   </main>
 
+  <!-- Modal explicativo: Parches vs Normales -->
+  <div id="modal-parches-overlay" class="modal-parches-overlay" style="display:none;">
+    <div class="modal-parches" role="dialog" aria-modal="true" aria-labelledby="modal-parches-title">
+      <h2 id="modal-parches-title">¿Qué son "Parches" y cuáles son las "Versiones normales"?</h2>
+      <p>Te explicamos en palabras simples para evitar confusiones:</p>
+      <div class="lista">
+        <strong>Archivos "Parches" (actualizaciones):</strong>
+        <p>Son pequeñas actualizaciones que corrigen fallos o añaden mejoras. No contienen todos los archivos necesarios para ejecutar la aplicación por sí solos.</p>
+        <p>Por eso <strong>primero debes instalar la versión completa</strong> (una descarga normal) o tener una versión anterior que no sea parche. Luego aplicas el parche encima para actualizar.</p>
+      </div>
+      <div class="lista">
+        <strong>Versiones normales (programa completo):</strong>
+        <p>Son paquetes completos del programa. Si descargas una versión normal la instalas y estará funcionando sin necesidad de otra descarga.</p>
+      </div>
+      <p style="font-size:13px;color:#4b5563">Resumen: Descarga siempre primero una versión normal (completa). Los parches sirven sólo para actualizar esa instalación.</p>
+      <div class="btns">
+        <button id="btn-masinfo" class="btn-masinfo" type="button">Más información</button>
+        <button id="btn-entendido" class="btn-entendido" type="button">Entendido</button>
+      </div>
+    </div>
+  </div>
+
   <div id="loader-tarjetas">
     <div class="spinner"></div>
     <p class="mensaje-loader">⏳ Espera... las tarjetas son tímidas dale su tiempo!</p>
@@ -116,5 +139,55 @@
   <!-- Confeti mágico -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="./logica-subWeb.js"></script>
+  <script>
+    (function(){
+      const KEY = 'modal_parches_visto_v1';
+      const overlay = document.getElementById('modal-parches-overlay');
+      const btnEntendido = document.getElementById('btn-entendido');
+      const btnMasInfo = document.getElementById('btn-masinfo');
+
+      function showModal(){
+        overlay.style.display = 'flex';
+        // prevenir scroll de fondo
+        document.body.style.overflow = 'hidden';
+      }
+
+      function hideModal(save){
+        overlay.style.display = 'none';
+        document.body.style.overflow = '';
+        if(save){
+          try{ localStorage.setItem(KEY, 'true'); }catch(e){}
+        }
+      }
+
+      // Mostrar solo si no fue visto
+      document.addEventListener('DOMContentLoaded', function(){
+        try{
+          const visto = localStorage.getItem(KEY);
+          if(!visto) showModal();
+        }catch(e){ showModal(); }
+      });
+
+      // Eventos
+      btnEntendido && btnEntendido.addEventListener('click', function(){ hideModal(true); });
+      btnMasInfo && btnMasInfo.addEventListener('click', function(){
+        // Redirigir a la guía de usuario o abrir sección de ayuda
+        // Si existe una guía local
+        window.location.href = './index-Guiauser.html';
+      });
+
+      // Cerrar al pulsar Escape
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && overlay.style.display === 'flex'){
+          hideModal(false);
+        }
+      });
+
+      // Cerrar al hacer clic fuera del dialogo
+      overlay && overlay.addEventListener('click', function(e){
+        if(e.target === overlay) hideModal(false);
+      });
+    })();
+  </script>
 </body>
 </html>
