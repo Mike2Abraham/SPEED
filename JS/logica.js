@@ -1,3 +1,148 @@
+// lOGICA-SCROLL
+const navbar = document.querySelector('.navbar');
+const cartelon = document.getElementById('cartelon');
+const animados = document.querySelectorAll('.aparece');
+const contador = document.querySelector('.contador-visitas');
+let lastScrollY = window.scrollY;
+
+// CONFIGURACIÓN
+const maxHeight = 590; // Altura máxima del header
+const minHeight = 70;  // Altura mínima contraído
+const limiteContraccion = 400; // scrollY hasta dónde se contrae
+
+function ajustarNavbar() {
+  const scrollY = window.scrollY;
+
+  // Cálculo progresivo de altura
+  let nuevaAltura = maxHeight - (scrollY * ((maxHeight - minHeight) / limiteContraccion));
+  nuevaAltura = Math.max(minHeight, Math.min(maxHeight, nuevaAltura));
+  navbar.style.height = `${nuevaAltura}px`;
+
+  // Mostrar u ocultar cartelón (solo si header está expandido)
+  if (scrollY > 150 && cartelon) {
+    cartelon.classList.add('oculto');
+  } else if (scrollY < 100 && cartelon) {
+    cartelon.classList.remove('oculto');
+  }
+
+  const contraido = nuevaAltura <= minHeight + 10;
+  
+  // FORZAR la visibilidad del contador
+  const contador = document.querySelector('.contador-visitas');
+  
+  if (contador) {
+    if (contraido) {
+      contador.style.display = 'none';
+    } else {
+      contador.style.display = 'block'; // o 'flex' según tu layout
+    }
+  }
+
+  // Mostrar/ocultar menú según el estado
+  if (nuevaAltura <= minHeight + 10) {
+    navbar.classList.add('contraido');
+  } else {
+    navbar.classList.remove('contraido');
+  }
+
+  if (navbar) {
+    navbar.style.height = `${nuevaAltura}px`;
+  
+    // Mostrar logo y título solo si el header está contraído
+    if (nuevaAltura <= minHeight + 10) {
+      navbar.classList.add('contraido');
+    } else {
+      navbar.classList.remove('contraido');
+    }
+  }
+}
+
+// Modal de "Desliza hacia abajo"
+const hintModal = document.querySelector('.hint-modal');
+
+// Mostrar solo si es la primera visita o recarga
+if (!sessionStorage.getItem('hintShown')) {
+  // Ocultar al hacer scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      hintModal.classList.add('hidden');
+      sessionStorage.setItem('hintShown', 'true');
+    }
+  });
+} else {
+  hintModal.classList.add('hidden');
+}
+
+function animarContenidoVisible() {
+  const trigger = window.innerHeight * 0.85;
+
+  animados.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < trigger) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+}
+
+// Eventos
+window.addEventListener('scroll', () => {
+  ajustarNavbar();
+  animarContenidoVisible();
+});
+
+window.addEventListener('load', () => {
+  ajustarNavbar();
+  animarContenidoVisible();
+});
+
+
+//js para el cursor de luz
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  const cursorLight = document.querySelector('.cursor-light');
+  
+  if (!navbar || !cursorLight) return;
+
+  // Configuración inicial
+  let isInsideNavbar = false;
+
+  // Mueve la luz con el cursor
+  document.addEventListener('mousemove', (e) => {
+    const rect = navbar.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Verifica si el cursor está dentro del header
+    const isInside = (
+      x >= 0 && x <= rect.width &&
+      y >= 0 && y <= rect.height
+    );
+
+    if (isInside) {
+      cursorLight.style.opacity = '1';
+      cursorLight.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      isInsideNavbar = true;
+    } else if (isInsideNavbar) {
+      cursorLight.style.opacity = '0';
+      isInsideNavbar = false;
+    }
+  });
+
+  
+
+  // Opcional: Suavizar entrada/salida
+  navbar.addEventListener('mouseenter', () => {
+    cursorLight.style.transition = 'opacity 0.3s ease';
+  });
+});
+
+
+
+
+
+
 // Modal Donaciones
 const modalDonacion = document.getElementById('donacion-modal');
 const btnDonacion = document.getElementById('modal-donacion');
@@ -183,148 +328,168 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// lOGICA-SCROLL
-const navbar = document.querySelector('.navbar');
-const cartelon = document.getElementById('cartelon');
-const animados = document.querySelectorAll('.aparece');
-
-let lastScrollY = window.scrollY;
-
-// CONFIGURACIÓN
-const maxHeight = 590; // Altura máxima del header
-const minHeight = 70;  // Altura mínima contraído
-const limiteContraccion = 300; // scrollY hasta dónde se contrae
-
-function ajustarNavbar() {
-  const scrollY = window.scrollY;
-
-  // Cálculo progresivo de altura
-  let nuevaAltura = maxHeight - (scrollY * ((maxHeight - minHeight) / limiteContraccion));
-  nuevaAltura = Math.max(minHeight, Math.min(maxHeight, nuevaAltura));
-  navbar.style.height = `${nuevaAltura}px`;
-
-  // Mostrar u ocultar cartelón (solo si header está expandido)
-  if (scrollY > 150 && cartelon) {
-    cartelon.classList.add('oculto');
-  } else if (scrollY < 100 && cartelon) {
-    cartelon.classList.remove('oculto');
-  }
-
-  // Mostrar/ocultar menú según el estado
-  if (nuevaAltura <= minHeight + 10) {
-    navbar.classList.add('contraido');
-  } else {
-    navbar.classList.remove('contraido');
-  }
-
-  if (navbar) {
-    navbar.style.height = `${nuevaAltura}px`;
-  
-    // Mostrar logo y título solo si el header está contraído
-    if (nuevaAltura <= minHeight + 10) {
-      navbar.classList.add('contraido');
-    } else {
-      navbar.classList.remove('contraido');
+// EXTENSIONES MARQUEE - Código que se ejecuta una sola vez
+function crearMarqueeExtensiones() {
+    const container = document.getElementById('extenciones-container');
+    
+    // Verificar si ya existe para no duplicar
+    if (container.innerHTML.trim() !== '') {
+        console.log('✅ Marquee ya estaba creado');
+        return;
     }
-  }
+    
+    const totalImagenes = 28;
+    let marqueeHTML = '';
+    
+    // Generar todas las imágenes
+    for (let i = 1; i <= totalImagenes; i++) {
+        marqueeHTML += `
+            <div class="extencion-item">
+                <img src="./recursos/Extent/sp-${i}.png" 
+                     alt="Extensión ${i}" 
+                     class="extencion-img"
+                     loading="lazy">
+            </div>
+        `;
+    }
+    
+    // Duplicar el contenido para efecto infinito sin espacios
+    const contenidoDuplicado = marqueeHTML + marqueeHTML;
+    
+    container.innerHTML = `
+        <div class="marquee-track" id="marquee-track">
+            ${contenidoDuplicado}
+        </div>
+    `;
+    
+    console.log('🎯 Marquee creado con', totalImagenes, 'imágenes');
 }
 
-// Modal de "Desliza hacia abajo"
-const hintModal = document.querySelector('.hint-modal');
-
-// Mostrar solo si es la primera visita o recarga
-if (!sessionStorage.getItem('hintShown')) {
-  // Ocultar al hacer scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      hintModal.classList.add('hidden');
-      sessionStorage.setItem('hintShown', 'true');
-    }
-  });
-} else {
-  hintModal.classList.add('hidden');
+// CSS dinámico para asegurar que los estilos estén presentes
+function injectMarqueeStyles() {
+    if (document.getElementById('marquee-styles')) return;
+    
+    const styles = `
+        <style id="marquee-styles">
+            .extenciones {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                padding: 40px 0;
+                background: transparent;
+            }
+            
+            .marquee-track {
+                display: flex;
+                gap: 25px;
+                animation: marquee-scroll 60s linear infinite;
+                width: max-content;
+            }
+            
+            .extenciones:hover .marquee-track {
+                animation-play-state: paused;
+            }
+            
+            .extencion-item {
+                flex-shrink: 0;
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                border-radius: 12px;
+                padding: 8px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+            }
+            
+            .extencion-item:hover {
+                transform: scale(1.15) translateY(-5px);
+                background: rgba(139, 92, 246, 0.2);
+                box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+                z-index: 10;
+            }
+            
+            .extencion-img {
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+                transition: all 0.3s ease;
+            }
+            
+            .extencion-item:hover .extencion-img {
+                filter: drop-shadow(0 8px 16px rgba(139, 92, 246, 0.4));
+                transform: scale(1.1);
+            }
+            
+            @keyframes marquee-scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-50% - 12.5px));
+                }
+            }
+            
+            /* Responsive */
+            @media (max-width: 768px) {
+                .extencion-img {
+                    width: 60px;
+                    height: 60px;
+                }
+                
+                .marquee-track {
+                    gap: 20px;
+                    animation-duration: 40s;
+                }
+            }
+        </style>
+    `;
+    
+    document.head.insertAdjacentHTML('beforeend', styles);
 }
 
-function animarContenidoVisible() {
-  const trigger = window.innerHeight * 0.85;
-
-  animados.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < trigger) {
-      el.classList.add('visible');
-    } else {
-      el.classList.remove('visible');
-    }
-  });
+// Inicializar - se ejecuta una sola vez
+function initExtensionesMarquee() {
+    if (window.marqueeInitialized) return;
+    
+    injectMarqueeStyles();
+    crearMarqueeExtensiones();
+    
+    window.marqueeInitialized = true;
+    console.log('🚀 Marquee de extensiones inicializado');
 }
 
-// Eventos
-window.addEventListener('scroll', () => {
-  ajustarNavbar();
-  animarContenidoVisible();
+// Ejecutar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', initExtensionesMarquee);
+
+// También ejecutar si el container se añade después
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.addedNodes) {
+            mutation.addedNodes.forEach(function(node) {
+                if (node.classList && node.classList.contains('extenciones')) {
+                    initExtensionesMarquee();
+                }
+            });
+        }
+    });
 });
 
-window.addEventListener('load', () => {
-  ajustarNavbar();
-  animarContenidoVisible();
-});
+observer.observe(document.body, { childList: true, subtree: true });
 
 
-//js para el cursor de luz
-document.addEventListener('DOMContentLoaded', () => {
-  const navbar = document.querySelector('.navbar');
-  const cursorLight = document.querySelector('.cursor-light');
-  
-  if (!navbar || !cursorLight) return;
 
-  // Configuración inicial
-  let isInsideNavbar = false;
 
-  // Mueve la luz con el cursor
-  document.addEventListener('mousemove', (e) => {
-    const rect = navbar.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
 
-    // Verifica si el cursor está dentro del header
-    const isInside = (
-      x >= 0 && x <= rect.width &&
-      y >= 0 && y <= rect.height
-    );
 
-    if (isInside) {
-      cursorLight.style.opacity = '1';
-      cursorLight.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-      isInsideNavbar = true;
-    } else if (isInsideNavbar) {
-      cursorLight.style.opacity = '0';
-      isInsideNavbar = false;
-    }
-  });
 
-  
 
-  // Opcional: Suavizar entrada/salida
-  navbar.addEventListener('mouseenter', () => {
-    cursorLight.style.transition = 'opacity 0.3s ease';
-  });
-});
+
+
+
+
+
+
+
+
 
 //logica para el boton de subida usando Sempou!
 const toTopBtn = document.querySelector('.to-top-btn');
@@ -381,111 +546,3 @@ if(hamburgerBtn && mobileMenu) {
     document.body.style.overflow = ''; // Restaurar scroll
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    const container = document.querySelector('.explisito');
-
-    // Control de visualización: si el usuario ya cerró este modal en las últimas 2 semanas,
-    // no lo mostramos. Guardamos la fecha en localStorage como timestamp (ms).
-    const EXPLISITO_KEY = 'modal_explisito_visto_at';
-    const TWO_WEEKS_MS = 1000 * 60 * 60 * 24 * 14; // 14 días
-    try {
-      const val = localStorage.getItem(EXPLISITO_KEY);
-      if (val) {
-        const ts = parseInt(val, 10);
-        if (!isNaN(ts)) {
-          const age = Date.now() - ts;
-          if (age < TWO_WEEKS_MS) {
-            // No mostrar el modal porque aún no han pasado 2 semanas
-            return;
-          }
-        }
-      }
-    } catch (e) {
-      // Si localStorage no está disponible, continuamos y mostramos el modal (sin guardar)
-      console.warn('localStorage no disponible para modal-explisito:', e);
-    }
-
-    // Arrays de capturas
-    const tiposCaptura = ['captura1.png', 'captura2.png', 'captura3.png', 'captura5.png', 'captura6.png', 'captura7.png', 'captura8.png', 'captura9.png'];
-
-    // Crear modal
-    const modal = document.createElement('div');
-    modal.className = 'modal-explisito';
-    modal.innerHTML = `
-      <button class="close-modal" styles="font-size: 40px; margin-top: -10px;">&times;</button>
-      <div class="carousel-buttons">
-      <button class="prev-btn">&#8592; Prev</button>
-        <img src="" alt="captura" class="carousel-image">
-        <div class="fondito-txt">
-          <div class="explisito-txt">Te Precento a SPM en su primera versión! con el para reproducir tus multimedias dirctamente desde Windows (Como un reproductor de audio y Video Normal), Pruebalo no querras despegarte de el!!</div>
-        </div>
-        <button class="next-btn">Next &#8594;</button>
-      </div>
-      <a href="https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPM-sub2.2/SPEED.v2.2.0.7z" class="download-btn">Descargar Ya</a>
-      <a href="./Dominios/index.html" class="download-btn2"><img class="download-btn2-img" src="./recursos/iconitos/extortar-list.png"></a>
-    `;
-    container.appendChild(modal);
-
-    // Crear lengüeta
-    const tab = document.createElement('div');
-    tab.className = 'modal-tab';
-    tab.textContent = "Descargar SPM";
-    tab.style.backgroundImage = "url('./recursos/iconitos/iconodVideo.png')";
-    tab.style.backgroundSize = 'contain';
-    tab.style.backgroundRepeat = 'no-repeat';
-    tab.style.backgroundPosition = 'center right';
-    document.body.appendChild(tab);
-
-    const carouselImage = modal.querySelector('.carousel-image');
-    let index = 0;
-
-    function actualizarImagen() {
-      carouselImage.style.opacity = 0; // comienza transparente
-      setTimeout(() => {
-        const tipo = tiposCaptura[index];
-        carouselImage.src = `./recursos/iconitos/${tipo}`;
-        carouselImage.style.opacity = 1; // vuelve a visible
-      }, 200); // tiempo corto para dar efecto fade
-    }
-
-    actualizarImagen();
-
-    // Carrusel automático
-    let interval = setInterval(() => {
-      index = (index + 1) % tiposCaptura.length;
-      actualizarImagen();
-    }, 7000); // tiempo de cambio
-
-    // Botones manuales
-    modal.querySelector('.prev-btn').addEventListener('click', () => {
-      index = (index - 1 + tiposCaptura.length) % tiposCaptura.length;
-      actualizarImagen();
-    });
-    modal.querySelector('.next-btn').addEventListener('click', () => {
-      index = (index + 1) % tiposCaptura.length;
-      actualizarImagen();
-    });
-
-    // Botón cerrar: ocultar modal y guardar la fecha de cierre en localStorage
-    modal.querySelector('.close-modal').addEventListener('click', () => {
-      modal.style.display = 'none';
-      tab.style.display = 'block';
-      try {
-        localStorage.setItem(EXPLISITO_KEY, String(Date.now()));
-      } catch (e) {
-        // Silenciar errores de localStorage
-      }
-    });
-
-    // Lengüeta abrir
-    tab.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      tab.style.display = 'none';
-    });
-
-  }, 5000); // Espera 5 segundos después de cargar la página
-
-});
-

@@ -26,8 +26,15 @@
 body {
   font-family: Arial, sans-serif;
   color: white;
-  background-color: #121212;
-  background-image: url(./Dominios/fancy-cushion.png);
+  background: radial-gradient(
+    circle,
+    #1a40c6 10%, /* Centro: Azul brillante */
+    #111c6d 50%, /* Medio: Azul oscuro */
+    #0c0e2b 100% /* Borde: Azul muy oscuro */
+  );
+  /* Opcionalmente, ajusta el tamaño y la posición para que el brillo sea más central */
+  height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -63,7 +70,8 @@ img.logotipo {
     justify-content: space-between;
     padding: 20px 30px;
     z-index: 1000;
-    background: linear-gradient(to bottom, #5f00ff, #007bff);
+    background: none;
+    backdrop-filter: blur(10px);
     background-repeat: no-repeat;
     transition: all 0.6s ease;
     height: 70px !important;

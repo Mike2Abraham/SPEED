@@ -1,48 +1,5 @@
-const navbar = document.querySelector('.navbar');
-const cartelon = document.getElementById('cartelon');
-const animados = document.querySelectorAll('.aparece');
+
 const animadosV2 = document.querySelectorAll('.apareceV2');
-
-let lastScrollY = window.scrollY;
-
-// CONFIGURACIÓN
-const maxHeight = 590; // Altura máxima del header
-const minHeight = 70;  // Altura mínima contraído
-const limiteContraccion = 300; // scrollY hasta dónde se contrae
-
-function ajustarNavbar() {
-  const scrollY = window.scrollY;
-
-  // Cálculo progresivo de altura
-  let nuevaAltura = maxHeight - (scrollY * ((maxHeight - minHeight) / limiteContraccion));
-  nuevaAltura = Math.max(minHeight, Math.min(maxHeight, nuevaAltura));
-  navbar.style.height = `${nuevaAltura}px`;
-
-  // Mostrar u ocultar cartelón (solo si header está expandido)
-  if (scrollY > 150 && cartelon) {
-    cartelon.classList.add('oculto');
-  } else if (scrollY < 100 && cartelon) {
-    cartelon.classList.remove('oculto');
-  }
-
-  // Mostrar/ocultar menú según el estado
-  if (nuevaAltura <= minHeight + 10) {
-    navbar.classList.add('contraido');
-  } else {
-    navbar.classList.remove('contraido');
-  }
-
-  if (navbar) {
-    navbar.style.height = `${nuevaAltura}px`;
-  
-    // Mostrar logo y título solo si el header está contraído
-    if (nuevaAltura <= minHeight + 10) {
-      navbar.classList.add('contraido');
-    } else {
-      navbar.classList.remove('contraido');
-    }
-  }
-}
 
 function animarContenidoVisible() {
   const trigger = window.innerHeight * 0.85;
@@ -70,17 +27,17 @@ function animarContenidoVisibleV2() {
   });
 }
 // Eventos
-window.addEventListener('scroll', () => {
-  ajustarNavbar();
-  animarContenidoVisible();
-  animarContenidoVisibleV2();
-});
-
-window.addEventListener('load', () => {
-  ajustarNavbar();
-  animarContenidoVisible();
-  animarContenidoVisibleV2();
-});
+//window.addEventListener('scroll', () => {
+//  ajustarNavbar();
+//  animarContenidoVisible();
+//  animarContenidoVisibleV2();
+//});
+//
+//window.addEventListener('load', () => {
+//  ajustarNavbar();
+//  animarContenidoVisible();
+//  animarContenidoVisibleV2();
+//});
 
 
 //js para el cursor de luz

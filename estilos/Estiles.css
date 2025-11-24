@@ -320,8 +320,15 @@ input[type="button"],
 body {
   font-family: Arial, sans-serif;
   color: white;
-  background-color: #121212;
-  background-image: url(./fancy-cushion.png);
+  background: radial-gradient(
+    circle,
+    #1a40c6 10%, /* Centro: Azul brillante */
+    #111c6d 50%, /* Medio: Azul oscuro */
+    #0c0e2b 100% /* Borde: Azul muy oscuro */
+  );
+  /* Opcionalmente, ajusta el tamaño y la posición para que el brillo sea más central */
+  height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -378,7 +385,8 @@ img.logotipo {
     padding: 20px 30px;
     z-index: 1000;
     overflow: hidden;
-    background: linear-gradient(to bottom, #080031, #007bff);
+    background: none;
+    width: 100%;
     background-repeat: no-repeat;
     transition: all 0.6s ease;
     height: 590px;
@@ -391,12 +399,19 @@ img.logotipo {
 
 /* Estado contraído al hacer scroll */
 .navbar.contraido {
-  height: 70px;
-  padding: 10px 30px;
-  background: linear-gradient(to bottom, #866ff9, #007bff);
-  flex-direction: row;
+    height: 70px;
+    padding: 10px 30px;
+    background: none;
+    display: flex;
+    backdrop-filter: blur(10px);
+    /* background: linear-gradient(to bottom, #866ff9, #007bff); */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 }
-
+.navbar .contador-visitas.oculto {
+    display: none !important;
+}
 /* Logo y título en el header */
 .logo {
   width: 50px;
@@ -415,7 +430,8 @@ img.logotipo {
 .titulo {
   font-size: 1.5em;
   font-weight: bold;
-      margin-top: -47px !important;
+      position: absolute;
+    left: 0;
   color: white;
   text-shadow: 0 0 14px #9400ff;
   margin: 0px 78px; /* Espacio entre logo y menú */
@@ -427,12 +443,10 @@ img.logotipo {
   display: none; /* Inicialmente oculto */
   opacity: 0;
   transition: opacity 0.4s ease;
-
-
-    gap: 1px;
-    margin-top: -48px;
-    flex-direction: row;
-    align-items: center;
+  gap: 1px;
+  flex-direction: row;
+  align-items: center;
+  margin-right: -20px;
 }
 
 .navbar.contraido .menu {
@@ -515,23 +529,6 @@ color: white;
   opacity: 0;
   transform: translateY(-50px);
   pointer-events: none;
-}
-
-#cartelon {
-  text-align: center;
-  color: transparent;
-  background: linear-gradient(270deg, rgb(255, 0, 0), #f0f, rgb(132, 0, 255), #0ff, rgb(30, 255, 0), rgb(255, 251, 0));
-  background-size: 400% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-     cursor: default;
-  animation: colorScroll 10s ease infinite;
-  white-space: nowrap;
-
-  filter: drop-shadow(1px 1px 0 rgb(189, 189, 189))
-          drop-shadow(-1px -1px 0 rgb(189, 189, 189))
-          drop-shadow(1px -1px 0 rgb(189, 189, 189))
-          drop-shadow(-1px 1px 0 rgb(189, 189, 189));
 }
 
 
@@ -1034,22 +1031,25 @@ button#btn-ultima-version {
 }
 /* contador de visitas*/
 .contador-visitas {
-      position: absolute;
+    position: absolute;
     font-size: 1.2em;
     margin-top: 106px;
     color: #ffffff;
     text-align: center;
     background: rgb(0 0 0 / 22%);
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-  cursor: pointer;
+    padding: 5px 10px;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
     transition: all 0.9s ease-all;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s 
+ease;
 }
 
 .contador-visitas:hover {
-  transform: scale(1.5);
   background: rgb(0 0 0);
 }
 
@@ -1121,76 +1121,151 @@ button#btn-ultima-version {
 
 
 
-/*estilos para historia*/
+/* Estilos mejorados para historia */
 .Contenedor-historia {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 .amanecer {
-    background: #ffffff;
-    width: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    width: 103%;
+    padding: 60px 0;
     display: flex;
-    padding: 15px 0px;
-    height: auto;
     flex-direction: column;
     align-items: center;
-}
-
-.aparece-terminacion1 {
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(360deg, #fffffffa, #ffffff00);
-}
-
-.aparece-terminacion {
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(180deg, #fffffffa, #ffffff00);
 }
 
 .historia {
     display: flex;
-    flex-direction: row;
-    margin-top: 10%;
-    gap: 40px;
-    max-width: 98%;
-    background: #e8c3ff;
-    border-radius: 30px;
-    padding: 20px 0px;
-    overflow-y: hidden;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 95%;
+    background: linear-gradient(145deg, #e8c3ff 0%, #d4a8ff 100%);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+    overflow-x: auto;
+    scroll-behavior: smooth;
     align-items: center;
-    justify-content: space-around;
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 #e8c3ff;
 }
 
+/* Scrollbar personalizado para webkit */
+.historia::-webkit-scrollbar {
+    height: 8px;
+}
+
+.historia::-webkit-scrollbar-track {
+    background: #e8c3ff;
+    border-radius: 10px;
+}
+
+.historia::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    border-radius: 10px;
+}
 
 .container-historia {
-    background: #b197ff;
-    width: 650px;
-    border: 2px solid #000aff;
-    min-width: 650px;
+    background: linear-gradient(145deg, #ffffff 0%, #f3e8ff 100%);
+    width: 380px;
+    min-width: 380px;
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
     display: flex;
-    border-radius: 40px;
-    height: 422px;
     flex-direction: column;
     align-items: center;
-    transition: all 0.5s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de borde sutil */
+.container-historia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5cf6, #c084fc, #a855f7);
+    border-radius: 20px 20px 0 0;
 }
 
 .container-historia:hover {
-  transform: scale(1.05);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.25);
 }
-
 
 .imagen-boxH {
-    /*height: auto;*/
-    height: 320px;
-    width: 98%;
-    border-radius: 17px;
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid #f1f5f9;
+    transition: all 0.3s ease;
 }
+
+.container-historia:hover .imagen-boxH {
+    border-color: #8b5cf6;
+}
+
+.subtitulo2_negat {
+    color: #1e293b;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+/* Mejoras responsive */
+@media (max-width: 768px) {
+    .historia {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+    
+    .container-historia {
+        width: 280px;
+        min-width: 280px;
+        padding: 20px;
+    }
+    
+    .imagen-boxH {
+        height: 180px;
+    }
+}
+
+/* Efectos de aparición para scroll */
+.container-historia {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 0.6s ease forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Retrasos escalonados para cada tarjeta */
+.container-historia:nth-child(1) { animation-delay: 0.1s; }
+.container-historia:nth-child(2) { animation-delay: 0.2s; }
+.container-historia:nth-child(3) { animation-delay: 0.3s; }
+.container-historia:nth-child(4) { animation-delay: 0.4s; }
+.container-historia:nth-child(5) { animation-delay: 0.5s; }
+.container-historia:nth-child(6) { animation-delay: 0.6s; }
+.container-historia:nth-child(7) { animation-delay: 0.7s; }
+.container-historia:nth-child(8) { animation-delay: 0.8s; }
 
 .atardecer {
     background: linear-gradient(360deg, #1a1733, #4e56af);
@@ -1385,79 +1460,6 @@ button#btn-ultima-version {
   }
 }
 
-
-/* Modal completo */
-.modal-explisito {
-    position: fixed;
-    top: 15%;
-    left: 0;
-    width: 380px;
-    height: 360px;
-    /* transform: translate(-50%, -50%); */
-    max-width: 380px;
-    background: rgb(20 20 20 / 36%);
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1000;
-    justify-content:flex-end;
-    transition: all 0.3s ease;
-}
-
-/* Imagen del carrusel */
-.modal-explisito img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  margin-bottom: 83px;
-  border-radius: 19px;
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-
-/* Botones de navegación */
-.carousel-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.carousel-buttons {
-  border-radius: 6px;
-  position: absolute;
-}
-
-.prev-btn {
-  position: absolute;
-  left: 0;
-  margin-top: 67px;
-  border-radius: 20px;
-  padding: 8px 16px;
-  background: linear-gradient(90deg, rgb(170, 0, 255), rgb(0, 21, 255));
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition:all 0.2s ease;
-}
-.next-btn {
-  position: absolute;
-  right: 0;
-  margin-top: 67px;
-  border-radius: 20px;
-  padding: 8px 16px;
-  background: linear-gradient(90deg, rgb(170, 0, 255), rgb(0, 21, 255));
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition:all 0.2s ease;
-}
-.next-btn, .prev-btn:hover {
-  background-color: #ff00c8;
-}
 
 /* Botón de descargar */
 .download-btn {
