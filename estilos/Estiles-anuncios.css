@@ -38,7 +38,7 @@
   max-width: 957px; /* Máximo ancho para cada imagen */
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 20px #007bff;
+  filter: drop-shadow(0 0 20px #007bff);
   transition: transform 0.4s ease;
   object-fit: contain;
 }

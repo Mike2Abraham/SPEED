@@ -1,31 +1,249 @@
 ####
-SPEED MULTIMEDIA v1.8.20
-Subido el: 15/06/2024
-Tamaño: 194MB
-Soporte: Windows 10/11
-Esta versión incluye:
-- Soporte para 20+ formatos
-- Interfaz rediseñada
-- Corrección de bugs críticos
-link: https://github.com/tuusuario/repo/releases/v2.0.zip
-@@@@
+Reproductor SPM v2.9.0 (64 bits)
+Subido el: Fecha de Subida: 24/02/2026
+Tamaño: 226 MB
+Soporte: Windows 8, 10 y 11 (64 bits)
+Windows 10/11
+-LO PRIMERO: ECUALIZADOR > Después de tanto tiempo... ¡YA TIENE ECUALIZADOR! 🎉 Personalizable Múltiples presets elegibles
+-🎨 VISUALIZADOR INTELIGENTE > Cambia de color según el horario Cambia de color según el cover que está sonando No es solo onda, es atmósfera
+-📚 MODO CATÁLOGO > Sugerencias según tus gustos (basado en lo que ya tenés en el PC) Próximamente: música fresca de internet (nueva o vieja, según gustos) Métricas: usos, likes, veces repetidas un paso más cerca de que la app te conozca mejor que vos mismo
+-✏️ EDITOR DE METADATA PROFESIONAL > Edición mínima o completa Automatización para cientos de audios (en pocos clics) Edición recta desde el reproductor (sin ventanas raras)
+-🔧 RENOMBRAR ARCHIVOS > Agregado al menú contextual Ya podés renombrar desde la lista Eso que parecía simple pero no estaba, ahora sí
+-📋 CLIP PORTAPAPELES INTELIGENTE > Capturas de pantalla Guardar textos e imágenes Autocompletado para trabajar con IA Para traducciones, edición de subtítulos, metadatos "El copia y pega llevado a otro nivel"
+-🎬 REPRODUCTOR DE VIDEO MEJORADO > Botones nuevos: retroceder/avanzar 10 segundos FLAC sin errores (al fin) Optimización de RAM y GPU Probado en Intel Celeron 1.4GHz con 4GB RAM (¡y funciona!)
+-🐛 BUGS RESUELTOS > IA y módulo de traducción de .srt y .vtt Muchos otros bugs que no mencione pero seguro estaban
+Versión: 2.9.0
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPv2.9sps/64bits.Setup.2.9.0.rar
 ####
-SPEED MULTIMEDIA v1.0.90
-Subido el: 01/05/2024
-Tamaño: 33MB
-Soporte: Windows 8/10
-Mejoras en:
-- Rendimiento en HD
-- Nuevo reproductor FLAC
-link: https://github.com/tuusuario/repo/releases/v1.8.zip
-@@@@
+Reproductor SPM v2.8.0 (64 bits)
+Subido el: Fecha de Subida: 22/01/2026
+Tamaño: 200 MB
+Soporte: Windows 8, 10 y 11 (64 bits)
+Windows 10/11
+-Traducción con IA local integrada: traduce del inglés al español (sin conexión, sin límites, 100% privado); próximamente más idiomas
+-Convertidor de video mejorado: muestra miniaturas en tiempo real del proceso y calcula el espacio necesario antes de comenzar; corregidos bugs de bitrate
+-Ventana de subtítulos para audio rediseñada: edición avanzada, gestión local, búsqueda en internet en 2 clics, guardado en PC, traducción automática y soporte para emojis
+-Optimización de rendimiento en entrada de audio: carga +10,000 canciones al instante sin bloqueos de interfaz
+-Consumo de RAM optimizado: ~300 MB en modo estándar (64 bits)
+-Ventana de propiedades mejorada: acceso rápido y detalles técnicos precisos desde cualquier parte de la app
+-Nuevo logotipo y ajustes visuales menores para mayor coherencia estética
+-Sistema de karaoke completo: ventana a pantalla completa, sincronización precisa con la música, personalización de letras y colores
+-Soporte para pantallas secundarias + control remoto vía red desde la ventana de notificaciones (Sistema Centralizado de Control SPEED)
+Versión: 2.8.0
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPv2.81/64bits.Setup.2.8.0.rar
+####
+Reproductor SPM v2.7.0 (64 bits)
+Subido el: Fecha de Subida: 30/12/2025
+Tamaño: 179 MB
+Soporte: Windows 8, 10 y 11 (64 bits)
+- Arreglados múltiples bugs de la v2.6
+- Galería integrada: escanea todo el PC (fotos por ruta, fecha, GPS) + editor rápido (recortar, efectos)
+- Reproductor de video mejorado: Dual Audio, subtítulos integrados, MKV optimizado hasta 4K (bajo consumo, sin bloqueos)
+- Nuevos formatos: AAC, FLAC, GIF animado
+- Convertidor remodelado: convierte audio y video, soporta subtítulos (internos, locales, hardcoded) y Dual Audio con detección de idioma
+- El convertidor organiza conversiones por carpetas/géneros y evita duplicados (sin configuración previa)
+- Reproductor de audio: corregidos cierres y congelamientos al cargar archivos con historial corrupto
+- Edición de subtítulos en modo karaoke (línea por línea, ideal para traducir)
+- Nuevo módulo de propiedades: codec, peso, miniatura, GPS, tiempo, etc.
+- Usa solo 170 MB de RAM; carga +8000 canciones con metadatos (meta: 10,000)
+- Calculadora con modo claro/oscuro
+- Favoritos integrados en todo el reproductor de audio
+- 5 estilos de visualizador de audio
+- Dock/widget flotante para controlar audio (y video en beta) sin abrir la app
+- Optimizado para PCs antiguos
+- Actualización automática, backup completo y mejor integración con Windows
+Versión: 2.7.0
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPv2.7/64bits.Setup.2.7.0.rar
+####
+Reproductor SPM v2.6 (32bits)
+Subido el: Fecha de Subida: 24/11/2025
+Tamaño: Tamaño: 121MB
+Soporte: Windows 10/11 32bits
+Windows 10/11
+- Multiples errores encontrados en 2.6 y arreglados
+- Mejora en Rendimiento (Menos consumo de GPU y un toque mas de minimalismo) 
+- Reproductor de Video Mejorado (ojo ya lee AVI, WMV, RMBV y 64 formatos mas)
+- Reproductor de Video (Poder ver formatos y edicion de anotacion por frames integracion de api para sustitulos)
+- Reproductor de Video (Sugerencias de Peliculas segun sus gustos)
+- Reproductor de Video (Captura de pantallas libro de anotacion redimencionamiento y otras mejoras mas)
+- Para el explorador, Ya puedes navegader en mis documentos! tambien puedes hacer busquedas en todo el pc
+- Para la lista, Ya existe las lista personalizadas, prueba y crea cuanto quieras!
+- Para el visualizador (5 tipos de ondas diferentes q puedes usar a tu antojo! si no te decides elige aleatoreo) en ajustes esta!
+- Arreglo visual, bordes toda la app fue remodelada!!
+- Para Tables de poco recursos o pc antigos opciones de poco recursos, asi la app volara en sus pcs viejitos tambien!!
+- Nueva barra de notificacion nativa (para ver audio actual y la metadata) y sistema de favoritos implementado en ella
+- Para Gestion de Backup (puedes crear y gestionar backup de todo lo q hace la aplicacion)
+- Para Gestion de Actualizacion automatica (la app puede auto actualizarse eh intalarse)
+- Para la integracion de windows y iconos mejorado
+Version: 2.6
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPv2.6b/32SPEED.v2.6.0.zip
+####
+Reproductor SPM v2.6 (Intalador completo)
+Subido el: Fecha de Subida: 24/11/2025
+Tamaño: Tamaño: 121MB
+Soporte: Windows 10/11 64bit
+Windows 10/11
+- Multiples errores encontrados en 2.5 y arreglados
+- Mejora en Rendimiento (Menos consumo de GPU y un toque mas de minimalismo) 
+- Reproductor de Video Mejorado (ojo ya lee AVI, WMV, RMBV y 64 formatos mas)
+- Reproductor de Video (Poder ver formatos y edicion de anotacion por frames integracion de api para sustitulos)
+- Reproductor de Video (Sugerencias de Peliculas segun sus gustos)
+- Reproductor de Video (Captura de pantallas libro de anotacion redimencionamiento y otras mejoras mas)
+- Para el explorador, Ya puedes navegader en mis documentos! tambien puedes hacer busquedas en todo el pc
+- Para la lista, Ya existe las lista personalizadas, prueba y crea cuanto quieras!
+- Para el visualizador (5 tipos de ondas diferentes q puedes usar a tu antojo! si no te decides elige aleatoreo) en ajustes esta!
+- Arreglo visual, bordes toda la app fue remodelada!!
+- Para Tables de poco recursos o pc antigos opciones de poco recursos, asi la app volara en sus pcs viejitos tambien!!
+- Nueva barra de notificacion nativa (para ver audio actual y la metadata) y sistema de favoritos implementado en ella
+- Para Gestion de Backup (puedes crear y gestionar backup de todo lo q hace la aplicacion)
+- Para Gestion de Actualizacion automatica (la app puede auto actualizarse eh intalarse)
+- Para la integracion de windows y iconos mejorado
+Version: 2.6
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPv2.6/64SPEED.v2.6.0.zip
+####
+Reproductor SPM v2.5 (Intalador completo)
+Subido el: Fecha de Subida: 18/10/2025
+Tamaño: Tamaño: 165MB
+Soporte: Windows 10/11 64bit
+Windows 10/11
+- Multiples errores encontrados en 2.4 y arreglados
+- Mejora en Rendimiento (Menos consumo de GPU)
+- (ojo no lee ni AVI ni WMV ni RMBV)
+- Convertidor de Video (Mejorado BUG en ts)
+Version: 2.5
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPv2.5/SPEED.v2.5.0.7z
+####
+Reproductor SPM v2.4 (Parche de Actualización)
+Subido el: Fecha de Subida: 15/10/2025
+Tamaño: Tamaño: 131MB
+Soporte: Windows 10/11 32bit
+Windows 10/11
+- Soporte de Imagenes y edicion mejorado
+- El reproductor de Video ya Tiene Bloc y Comentarios
+- Descarga y suma de sustitulos y karaoke para Audio en automatico y manual
+- Mejora en Rendimiento (Menos consumo de GPU)
+- (ojo no lee ni AVI ni WMV ni RMBV)
+- Convertidor de Video (Mejorado BUG en ts)
+- LEctura automatica de Sustitulos de Video local
+- Ya tiene modo CINE puedes ver poster nombre descripciones y detalles de series peliculas y videos
+Version: 2.4
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPv2.4/SPEEDv2.4.0.7z
+####
+Reproductor SPM v2.2 (para Windows Nativo)
+Subido el: Fecha de Subida: 28/09/2025
+Tamaño: Tamaño: 161MB
+Soporte: Windows 10/11 32bit
+Windows 10/11
+- Este reproductor de Audio y Video es para complementar SPEED trabja en conjunto con la app pero es independiente
+- El reproductor de Video recuerda donde te quedaste
+- Lee todos los formatos de audio
+- usa apenas 20MB de RAM (antes en pc de viejo recursos fallaba y consumia 3GB probocando pantallazo azul eso esta solucionado)
+- (ojo no lee ni AVI ni WMV ni RMBV)
+- Convertidor de Video
+- Modo Isla Dinamica mejorada y ya lee cover de las MP3
+- Ya tiene modo CINE puedes ver poster nombre descripciones y sinopcis de series peliculas y videos
+Version: 2.2
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPM-sub2.2/SPEED.v2.2.0.7z
+####
+Reproductor SPM v2.1 (para Windows Nativo)
+Subido el: Fecha de Subida: 21/08/2025
+Tamaño: Tamaño: 101MB
+Soporte: Windows 10/11 32bit
+Windows 10/11
+- Este reproductor de Audio y Video es para complementar SPEED trabja en conjunto con la app pero es independiente
+- El reproductor de Video ya No se bugea
+- Lee todos los formatos de audio
+- usa apenas 20MB de RAM (antes en pc de viejo recursos fallaba y consumia 3GB probocando pantallazo azul eso esta solucionado)
+- (ojo no lee ni AVI ni WMV ni RMBV)
+- Interfaz Mejorada y animaciones suaves
+- Modo Isla Dinamica mejorada y ya lee cover de las MP3
+- Esta app es independiente y no necesita de nada para funcionar... usted solo lo instala y comienza a usarlo con Abrir con en Windows
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPM-subv2.1/SPM-lanzador.Setup.2.0.52.7z
+####
+Reproductor SPM Video-Audio (para Windows Nativo)
+Subido el: Fecha de Subida: 13/08/2025
+Tamaño: Tamaño: 100MB
+Soporte: Windows 10/11 64bit
+Windows 10/11
+- Este reproductor de Audio y Video es para complementar SPEED trabja en conjunto con la app pero es independiente
+- El reproductor de Video lee subtitulos .srt y .vtt localmente por ahora y debes adjuntarlo
+- Lee todos los formatos de audio
+- usa apenas 20MB de RAM
+- (ojo no lee ni AVI ni WMV ni RMBV)
+- Interfaz nueva colorida facil de usar
+- Modo Isla Dinamica
+- Esta app es independiente y no necesita de nada para funcionar... usted solo lo instala y comienza a usarlo con Abrir con en Windows
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPM-subv1.0/Instalador.SPM.1.0.7z
+####
+Parche v1.9.52 de Actualización SPEED MULTIMEDIA v1.9.52
+Subido el: Fecha de Subida: 01/06/2025
+Tamaño: Tamaño: 49MB
+Soporte: Windows 10/11 64bit
+Windows 10/11
+- Se repararon varios bugs y errores criticos
+- El reproductor de Video lee subtitulos .srt y .vtt localmente por ahora y debes adjuntarlo
+- Convertidor de Audio mejorado
+- No se carga todo en la RAM mejor optimizacion
+- Alarma y avisos de Notificaciones
+- Interfaz rediseñada
+- Editor de Texto ya guarda en doc
+- Esto solo es un parche por lo que debes tener instalado la v1.8.20 para que funcione
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/1.9.52/FIX.PARCHE.DE.Actualizacion.SPEED.v1.9.52.zip
+####
+SPEED MULTIMEDIA v1.8.20
+Subido el: Fecha de Subida: 22/05/2025
+Tamaño: Tamaño: 194MB
+Soporte: Windows 10/11 64bit
+Windows 10/11
+- Soporte para 20+ formatos
+- Grabadora de voz
+- Convertidor de Audio
+- Exlorador de archivos
+- Cuentas y Contrasenas
+- Interfaz rediseñada
+- Editor de Texto
+- Corrección de bugs críticos
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/SPeeD/SPEED.INSTALL.v1.8.zip
+####
+SPEED MULTIMEDIA v1.0.90 (PARCHE)
+Subido el: Fecha de Subida: 29/04/2025
+Tamaño: Tamaño: 33MB
+Soporte: Windows 10/11 64bit
+Windows 10/11
+- Confirmacion antes de renombrar y eliminar
+- Canvas para Visualizador de Audio
+- Soporte de Mic 
+- Soporte a codec Mp4 y MkV
+- Se reparan errores de la version anterior
+- Ojo esto es un parche, por lo q se debe tener instalado antes la version 1.0.26 para funcionar
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/1.0.90/SPEED.MULTIMEDIA.v1.0.90.zip
 ####
 SPEED MULTIMEDIA v1.0.26
-Subido el: 01/05/2024
-Tamaño: 144MB
-Soporte: Windows 8/10
+Subido el: Fecha de Subida: 25/04/2025
+Tamaño: Tamaño: 144MB
+Soporte: Windows 8/10 64bit
+Windows 8/10
 Mejoras en:
 - Rendimiento en HD
+- codec para AVI
+- Funcion para exportar archivos
 - Nuevo reproductor FLAC
-link: https://github.com/tuusuario/repo/releases/v1.8.zip
-@@@@
+link: https://github.com/Mike2Abraham/SPEED-ELECTRONIC-AUDIO-2.0/releases/download/1.0.26/1.0.26.zip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

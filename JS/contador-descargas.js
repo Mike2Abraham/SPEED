@@ -33,6 +33,53 @@ async function actualizarContador(appName) {
   }
 }
 
+async function obtenerNombresDeVersiones() {
+  try {
+    const response = await fetch(`${GITHUB_RAW_URL}?t=${Date.now()}`);
+    const data = await response.text();
+    return data
+      .split('####')
+      .slice(1)
+      .map(version => {
+        const lines = version.split('\n').map(line => line.trim()).filter(Boolean);
+        return lines[0] ? lines[0].trim() : null;
+      })
+      .filter(Boolean);
+  } catch (error) {
+    console.error("Error al obtener nombres de versiones:", error);
+    return [];
+  }
+}
+
+async function obtenerContadorVersion(appName) {
+  try {
+    const response = await fetch(`${SHEET_SCRIPT_URL}?app=${encodeURIComponent(appName)}&mode=get&t=${Date.now()}`);
+    if (!response.ok) throw new Error('HTTP error');
+    const text = await response.text();
+    return Number(text.replace(/\D/g, '')) || 0;
+  } catch (error) {
+    console.error(`Error al obtener contador de ${appName}:`, error);
+    return 0;
+  }
+}
+
+async function mostrarTotalDescargas() {
+  const target = document.getElementById('total-downloads-count');
+  if (!target) return;
+
+  target.textContent = 'cargando...';
+  const versionNames = await obtenerNombresDeVersiones();
+
+  if (!versionNames.length) {
+    target.textContent = 'no disponible';
+    return;
+  }
+
+  const counters = await Promise.all(versionNames.map(name => obtenerContadorVersion(name)));
+  const total = counters.reduce((sum, value) => sum + value, 0);
+  target.textContent = total.toLocaleString('es-ES');
+}
+
 // Mostrar modal simple (similar al que ya tienes)
 function mostrarModalSimple(appName, link) {
   const modal = document.createElement('div');
@@ -104,7 +151,10 @@ async function initBotonPrincipal() {
 }
 
 // Iniciar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', initBotonPrincipal);
+document.addEventListener('DOMContentLoaded', async () => {
+  await initBotonPrincipal();
+  await mostrarTotalDescargas();
+});
 
 
 // contador-visitas.js - Contador de visitas únicas
